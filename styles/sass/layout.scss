@@ -1,0 +1,86 @@
+ // colours
+ $blue-primary: #608AF8;
+ $light-blue: #E8EFFF;
+ $dark-blue: #6E7698;
+ $grey: #C4C4C4;
+ $red: #FF2E36;
+
+ // fonts
+ $pp-font: 'Roboto', sans-serif;
+ $secondary-font: 'Bungee', cursive;
+ 
+ 
+ :root {
+  box-sizing: border-box;
+ }
+
+ *,
+ ::before,
+ ::after {
+   box-sizing: inherit;
+   
+   h1{font-size: 2em;}
+   h2{font-size: 1.5em;}
+   h3{font-size: 1.17em;}
+   h4{font-size: 1.12em;}
+
+
+   //  applies to 800px and wide
+   @media (min-width: 800px) {
+     :root {
+       font-size: .875em;;
+     }
+   }
+  
+   //  applies to 1200px and large
+   @media (min-width: 1200px) {
+    :root {
+      font-size: 1em;;
+    }
+  }
+ }
+
+ body {
+   font-family: $pp-font;
+   .navbar {
+     padding: 1.5em;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     height: 120px;
+    //  background-color: #608AF8;
+     .logo {
+       padding: 1em;
+       img {
+         width: 4em;
+       }
+     }
+
+     .cart {
+      padding: 1em;
+      img {
+        width: 4em;
+      }
+     }
+     
+     ul {
+      display: flex;
+      justify-content: center;
+      padding: .5em;
+      li {
+        list-style: none;
+        font-family: $pp-font;
+        a {
+          padding: 1em;
+          color: $blue-primary;
+        }
+         &:first-child {
+          color: $blue-primary;
+        }
+      }
+     }
+
+   }
+ }
+
+

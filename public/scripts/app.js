@@ -4,12 +4,19 @@
 const createNavBar = () => {
   return (
     `<nav class="navbar">
-      <div class="logo">logo here </div>
+      <div class="logo">
+         <img alt="logo" src="../logo/logo.svg">
+      </div>
       <ul>
         <li><a></a>Home</li>
         <li><a></a>Order</li>
         <li><a></a>Contact</li>
       </ul>
+      <div class="cart">
+         <img alt="logo" src="../images/cart.svg">
+      </div>
+
+      
     </nav>`
   );
 };
