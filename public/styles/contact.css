@@ -17,12 +17,30 @@ h1 {
   background-position: center;
   background-size: cover;
 }
-.bg-container .intro {
+
+.intro {
+  display: flex;
+  flex-direction: column;
   color: white;
   text-align: center;
 }
+.intro p {
+  margin: 0;
+  font-size: medium;
+}
 
 .contact {
+  display: block;
   color: black;
   background: lightslategrey;
+  padding: 15px;
+  padding-bottom: 0;
+}
+.contact .phone,
+.contact .hours {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
+.contact .location {
+  font-weight: bold;
 }

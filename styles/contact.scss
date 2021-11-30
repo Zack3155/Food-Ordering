@@ -18,14 +18,38 @@ h1 {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+}
 
-	.intro {
-		color: white;
-		text-align: center;
+.intro {
+	display: flex;
+	flex-direction: column;
+	color: white;
+	text-align: center;
+
+	p {
+		margin: 0;
+		font-size: medium;
 	}
 }
 
 .contact {
+	display: block;
 	color: black;
 	background: lightslategrey;
+	padding: 15px;
+	padding-bottom: 0;
+
+	@mixin borderLine {
+		border-bottom-width: 2px;
+		border-bottom-style: solid;
+	}
+
+	.phone,
+	.hours {
+		@include borderLine;
+	}
+
+	.location {
+		font-weight: bold;
+	}
 }
