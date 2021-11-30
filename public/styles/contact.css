@@ -1,0 +1,28 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font: 100% Nunito, sans-serif;
+}
+
+h1 {
+  margin: 0;
+}
+
+.bg-container {
+  width: 100%;
+  height: 80%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url("../../images/contact-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.bg-container .intro {
+  color: white;
+  text-align: center;
+}
+
+.contact {
+  color: black;
+  background: lightslategrey;
+}
