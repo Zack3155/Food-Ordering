@@ -9,7 +9,7 @@
     "local": "./node_modules/.bin/nodemon -L --ignore public/",
     "db:reset": "node bin/resetdb.js",
 
-    "sass:watch": "sass --watch ./public/styles/sass:./public/styles/css"
+    "sass-watch": "sass --watch ./public/styles/sass:./public/styles/css"
   },
   "author": "Lighthouse Labs",
   "license": "ISC",
