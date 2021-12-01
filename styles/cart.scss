@@ -84,10 +84,8 @@ header {
 			flex-direction: row;
 			margin-top: 10px;
 
-			textarea {
-				width: 42px;
-				height: 25px;
-				text-align: center;
+			output {
+				font-weight: bold;
 			}
 
 			.add,

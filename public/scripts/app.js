@@ -55,5 +55,38 @@ $(document).ready(function () {
   $('.user-address').append(buyDetails);
   $('.shape-decoration').append(createDecoration);
   $('.blue-container').append(blueBannerContent);
+  $('.payment').append(payment);
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  // Cart Page Implementation
+
+  // Add Button
+  $(".add").click(function () {
+    const input = $('.quantity-input output');
+    const MAX = 9;
+    let quantity = Number(input.text());
+
+    if (quantity < MAX) {
+      input.text(++quantity);
+    }
+  });
+
+  // Minus Button
+  $(".minus").click(function () {
+    const input = $('.quantity-input output');
+    const Min = 1;
+    let quantity = Number(input.text());
+
+    if (quantity > Min) {
+      input.text(--quantity);
+    }
+  });
+
+
+  // Checkout Button
+  $(".checkout button").click(function () {
+    window.location.href = "/checkout";
+  });
+  ///////////////////////////////////////////////////////////////////////////////////////////////
 });
 
