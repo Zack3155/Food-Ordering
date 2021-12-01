@@ -98,10 +98,11 @@ header .name {
 }
 
 .checkout {
-  position: fixed;
+  float: right;
   font-weight: bolder;
-  bottom: 30px;
-  right: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-right: 20px;
   color: #608af8;
 }
 .checkout button {

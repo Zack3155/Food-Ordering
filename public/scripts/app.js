@@ -95,7 +95,7 @@ const createCartItem = function (name, pic_url, intro, quantity) {
 const renderCart = function (dishes) {
   const cartContainer = $('.dishes');
   const $itm = createCartItem('Photosimysia', 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/88f787f4-40c9-4084-92f1-5df6dc94fb72-french-onion-soup.jpg', `Very few dishes are as comforting as French onion soup – a blend of mellow, slowly cooked, caramelised onions in a broth laced with white wine and cognac. It's thought that a version of the soup has existed since at least Roman times, but the modern version originated in 18th-century Paris. The soup is served in a ramekin, topped with a slice of baguette and cheese that's then melted under a grill.`, '1');
-  cartContainer.append($itm);
+  cartContainer.append($itm); cartContainer.append($itm); cartContainer.append($itm);
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
