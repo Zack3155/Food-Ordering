@@ -5,47 +5,72 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  <title>Login</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@300&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="/styles/contact.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/app.js"></script>
+
+  <title>Contact</title>
 </head>
 
 <body>
+  <section class="menu"></section>
+  <div class="bg-container">
+    <div class="intro">
+      <h1>WHY CHOOSE US</h1>
+      <h2>WE ARE HERE TO SERVE YOU TO THE BEST DISHES</h2>
+      <h3>We help you find and order food from wherever you are.</h3>
+      <p> How it works:</p>
+      <p> We list our menu items on the website main page.</p>
+      When you find what you're
+      looking for, you can place your order through our website. <p>We also give you access to reviews each order
+        and makes sure you get exactly what you want. </p>
+      <p>After you add order into your cart, click on cart and confirm
+        checkout. </p>
+      <p>You then type in
+        an address and phone number, we send you a SMS message for the ETA to that locale.</p>
+    </div>
+  </div>
 
-  <main style="margin: 1em;">
-    <h3>Login</h3>
-
-    <form method="post" action="/login">
-
-      <div style="width: 20em;">
-
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input style="width: 100%" type="email" name="email" id="email" placeholder="Please Enter ur Email">
-        </div>
-
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input style="width: 100%" type="password" name="password" id="password"
-            placeholder="Please Enter ur password">
-        </div>
-
-        <input type="submit" class="btn btn-primary" value="Login">
-      </div>
-
-    </form>
-  </main>
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+  <div class="contact">
+    <h1>CONTACT</h1>
+    <p>Have a question about our services? We would be happy to answer any of your questions at your convenience.
+      Please
+      contact or find us below: </p>
+    <div class="phone">
+      <p>Phone Number: XXX-XXX-XXXX</p>
+    </div>
+    <div class="hours">
+      <h3>Opening Hours:</h3>
+      <p>Monday - Friday: 9 a.m. - 20 p.m.</p>
+      <p>Saturday - Sunday: 11 a.m. - 21 p.m.</p>
+    </div>
+    <div class="location">
+      <p>Address: XXX XXXXX, XX, XXX XXX</p>
+    </div>
+  </div>
 </body>
 
 </html>
