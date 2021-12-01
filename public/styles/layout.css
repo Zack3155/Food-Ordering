@@ -1,9 +1,82 @@
-body,
-html {
-  margin: 0;
+:root {
+  box-sizing: border-box;
 }
 
-nav {
-  background-color: aquamarine;
-  padding: 40px;
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+* h1,
+::before h1,
+::after h1 {
+  font-size: 2em;
+}
+* h2,
+::before h2,
+::after h2 {
+  font-size: 1.5em;
+}
+* h3,
+::before h3,
+::after h3 {
+  font-size: 1.17em;
+}
+* h4,
+::before h4,
+::after h4 {
+  font-size: 1.12em;
+}
+@media (min-width: 800px) {
+  * :root,
+::before :root,
+::after :root {
+    font-size: 0.875em;
+  }
+}
+@media (min-width: 1200px) {
+  * :root,
+::before :root,
+::after :root {
+    font-size: 1em;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+body .navbar {
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+}
+body .navbar .logo {
+  padding: 1em;
+}
+body .navbar .logo img {
+  width: 4em;
+}
+body .navbar .cart {
+  padding: 1em;
+}
+body .navbar .cart img {
+  width: 4em;
+}
+body .navbar ul {
+  display: flex;
+  justify-content: center;
+  padding: 0.5em;
+}
+body .navbar ul li {
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+}
+body .navbar ul li a {
+  padding: 1em;
+  color: #608af8;
+}
+body .navbar ul li:first-child {
+  color: #608af8;
 }
