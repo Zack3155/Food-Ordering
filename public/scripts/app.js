@@ -5,7 +5,7 @@ const createNavBar = () => {
   return (
     `<nav class="navbar">
       <div class="logo">
-         <img alt="logo" src="../logo/logo.svg">
+         <a href='/home'><img alt="logo" src="../logo/logo.svg"></a>
       </div>
       <ul class="menu-item-container">
         <li><a href="/home">Home</a></li>
@@ -13,7 +13,7 @@ const createNavBar = () => {
         <li><a href="/contact">Contact</a></li>
       </ul>
       <div class="cart">
-         <img alt="logo" src="../images/cart.svg">
+         <a href='/cart'> <img alt="cart" src="../images/cart.svg"> </a>
       </div>
     </nav>`
   );

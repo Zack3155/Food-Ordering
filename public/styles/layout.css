@@ -40,11 +40,17 @@ body {
 .navbar .logo img {
   width: 4em;
 }
+.navbar .logo img:hover {
+  cursor: pointer;
+}
 .navbar .cart {
   padding: 1em;
 }
 .navbar .cart img {
   width: 4em;
+}
+.navbar .cart a:hover {
+  cursor: pointer;
 }
 .navbar .menu-item-container {
   display: flex;
@@ -135,8 +141,7 @@ body {
 }
 
 /*
- UTILITY
-
+ UTILITY CLASSES
 */
 .bg-to-blue {
   background-color: #608af8;
