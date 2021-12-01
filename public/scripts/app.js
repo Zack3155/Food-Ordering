@@ -147,5 +147,11 @@ $(document).ready(function () {
   $('.shape-decoration').append(createDecoration);
   $('.blue-container').append(blueBannerContent);
   $('.payment').append(payment);
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  // Cart Page Implementation
+  $(".checkout button").click(function (req, res) {
+    window.location.href = "/checkout";
+  });
 });
 
