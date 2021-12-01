@@ -19,12 +19,13 @@ const createNavBar = () => {
   );
 };
 
-const buyDetails = () => {
+const searchButton = () => {
   // <label for="phoneNumber" class="form-label label-default">Phone</label>
   return (
 
     `<div class="mb-3  form-control-lg change-color">
         <input type="text" class="form-control" id="phoneNumber" placeholder="food, drinks, deserts etc.">
+        <div class="arrow-container"><i class="fas fa-arrow-alt-circle-right"></i></div>
     </div>` // end of real div
   );
 };
@@ -34,6 +35,7 @@ const createDecoration = () => {
   <div class="rectangle"></div>
   <div class="hook-container">
     Quality and Quantity <br/> are our answers to your cravings.
+    
   </div>
   `);
 };
@@ -120,7 +122,7 @@ const renderCart = function (dishes) {
 $(document).ready(function () {
   // eslint-disable-next-line no-undef
   $('.menu').append(createNavBar);
-  $('.user-address').append(buyDetails);
+  $('.search-container').append(searchButton);
   $('.shape-decoration').append(createDecoration);
   $('.blue-container').append(blueBannerContent);
 

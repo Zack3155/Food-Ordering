@@ -84,8 +84,9 @@ body {
 	}
 } // navbar
 
-.user-address {
+.search-container {
 	.change-color {
+		position: relative;
 		width: 60%;
 		height: 5em;
 		margin: 0 auto;
@@ -94,6 +95,15 @@ body {
 			margin-top: 1em;
 			height: 3em;
 			border: 1px solid #608af8;
+		}
+
+		.arrow-container {
+			position: absolute;
+			top: 33%;
+			left: 85%;
+			&:hover{
+				cursor: pointer;
+			}
 		}
 	}
 }
@@ -142,11 +152,7 @@ body {
 	}
 }
 
-// payment section
-.payment-title {
-	color: $dark-blue;
-	font-size: 1.5em;
-}
+
 
 /*
  UTILITY
