@@ -14,6 +14,7 @@ const createNavBar = () => {
       </ul>
       <div class="cart">
          <a href='/cart'> <img alt="cart" src="../images/cart.svg"> </a>
+         <div class="order-counter">0</div>
       </div>
     </nav>`
   );

@@ -44,6 +44,7 @@ body {
   cursor: pointer;
 }
 .navbar .cart {
+  position: relative;
   padding: 1em;
 }
 .navbar .cart img {
@@ -51,6 +52,18 @@ body {
 }
 .navbar .cart a:hover {
   cursor: pointer;
+}
+.navbar .cart .order-counter {
+  position: absolute;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5em;
+  border-radius: 50%;
+  color: #ff2e36;
+  top: 20%;
+  left: 65%;
 }
 .navbar .menu-item-container {
   display: flex;

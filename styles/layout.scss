@@ -61,12 +61,25 @@ body {
 	}
 
 	.cart {
+		position: relative;
 		padding: 1em;
 		img {
 			width: 4em;
 		}
 		a:hover{
 			cursor: pointer;
+		}
+		.order-counter {
+			position: absolute;
+			background-color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 1.5em;
+			border-radius: 50%;
+			color:$red;
+			top: 20%;
+			left: 65%;
 		}
 	}
 
