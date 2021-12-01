@@ -66,6 +66,7 @@ header .name {
 }
 .content footer p {
   margin-top: 5px;
+  margin-left: 10px;
   font-size: small;
   font-weight: bold;
   color: #608af8;
@@ -75,6 +76,7 @@ header .name {
   display: flex;
   flex-direction: row;
   margin-top: 10px;
+  justify-content: space-between;
 }
 .content footer .quantity output {
   font-weight: bold;
