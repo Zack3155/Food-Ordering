@@ -72,11 +72,12 @@
         font-family: $pp-font;
         a {
           padding: 1em;
-          color: $blue-primary;
+          color: $dark-blue;
+          &:hover {
+            color: $blue-primary;
+          }
         }
-         &:first-child {
-          color: $blue-primary;
-        }
+         
       }
      }
 
