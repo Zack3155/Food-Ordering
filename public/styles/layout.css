@@ -65,16 +65,25 @@ body {
   cursor: pointer;
 }
 
-.user-address .change-color {
+.search-container .change-color {
+  position: relative;
   width: 60%;
   height: 5em;
   margin: 0 auto;
   color: #608af8;
 }
-.user-address .change-color #phoneNumber {
+.search-container .change-color #phoneNumber {
   margin-top: 1em;
   height: 3em;
   border: 1px solid #608af8;
+}
+.search-container .change-color .arrow-container {
+  position: absolute;
+  top: 33%;
+  left: 85%;
+}
+.search-container .change-color .arrow-container:hover {
+  cursor: pointer;
 }
 
 .shape-decoration {
@@ -120,11 +129,6 @@ body {
 }
 .blue-banner h4 {
   margin-top: 0;
-}
-
-.payment-title {
-  color: #6e7698;
-  font-size: 1.5em;
 }
 
 /*
