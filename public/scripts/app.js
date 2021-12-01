@@ -115,7 +115,11 @@ const buyDetails = () => {
 
     `<div class="mb-3  form-control-lg change-color">
         <input type="text" class="form-control" id="phoneNumber" placeholder="food, drinks, deserts etc.">
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 7411d839fffe108f40893c33d1c4cbeb9b6b933d
     </div>` // end of real div
   );
 };
@@ -140,7 +144,11 @@ const blueBannerContent = () => {
 };
 
 // eslint-disable-next-line no-undef
+<<<<<<< HEAD
 $(document).ready(function() {
+=======
+$(document).ready(function () {
+>>>>>>> 7411d839fffe108f40893c33d1c4cbeb9b6b933d
   // eslint-disable-next-line no-undef
   $('.menu').append(createNavBar);
   $('.user-address').append(buyDetails);
@@ -149,4 +157,7 @@ $(document).ready(function() {
   $('.payment').append(payment);
 });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7411d839fffe108f40893c33d1c4cbeb9b6b933d
