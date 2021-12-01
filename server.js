@@ -39,7 +39,7 @@ const homeRoutes = require("./routes/home");
 const drinkRoutes = require("./routes/drink");
 const contactRoutes = require("./routes/contact");
 const cartRoutes = require("./routes/cart");
-const orderRoutes = require("./routes/order");
+const orderRoutes = require("./routes/menu");
 const checkoutRoutes = require("./routes/checkout");
 const addressRoutes = require("./routes/address");
 
@@ -52,7 +52,7 @@ app.use("/home", homeRoutes(db));
 app.use("/drink", drinkRoutes(db));
 app.use("/contact", contactRoutes(db));
 app.use("/cart", cartRoutes(db));
-app.use("/order", orderRoutes(db));
+app.use("/menu", orderRoutes(db));
 app.use("/checkout", checkoutRoutes(db));
 app.use("/address", addressRoutes(db));
 // Note: mount other resources here, using the same pattern above
