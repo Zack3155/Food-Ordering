@@ -64,6 +64,9 @@ header .name {
   margin-bottom: 10px;
   text-align: justify;
 }
+.content footer {
+  align-self: center;
+}
 .content footer p {
   margin-top: 5px;
   font-size: small;

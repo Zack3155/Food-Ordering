@@ -55,7 +55,6 @@ $(document).ready(function () {
   $('.user-address').append(buyDetails);
   $('.shape-decoration').append(createDecoration);
   $('.blue-container').append(blueBannerContent);
-  $('.payment').append(payment);
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
   // Cart Page Implementation
