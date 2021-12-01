@@ -139,6 +139,25 @@ const blueBannerContent = () => {
   `);
 };
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// Client Side Logic Implementation
+
+// Dishes example
+const dishes = [{ a: 1 }, { b: 2 }, { c: 3 }, { d: 4 }, { e: 5 }, { f: 6 }, { g: 7 }, { h: 8 }, { i: 9 }];
+
+// Remove dish from Dishes given by its name
+// Return modified Dishes
+const removeDish = function (dish_name, dishes) {
+  return dishes.filter(itm => !itm[dish_name]);
+};
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+// Cart Page Logic Implementation
+
+// Show cart content according to Dishes array
+
+
 // eslint-disable-next-line no-undef
 $(document).ready(function () {
   // eslint-disable-next-line no-undef
@@ -151,12 +170,24 @@ $(document).ready(function () {
   ///////////////////////////////////////////////////////////////////////////////////////////////
   // Cart Page Implementation
 
+
+  // Remove Button
+  $(".remove button").click(function () {
+
+
+    // Remove dish from Dishes array
+    //removeDish(dish_name, dishes);
+
+    // Remove the current dish from cart page
+    const dish = $(this).closest(".dish-container")
+    dish.remove();
+  });
+
   // Add Button
   $(".add").click(function () {
     const input = $('.quantity-input output');
     const MAX = 9;
     let quantity = Number(input.text());
-
     if (quantity < MAX) {
       input.text(++quantity);
     }
@@ -167,12 +198,10 @@ $(document).ready(function () {
     const input = $('.quantity-input output');
     const Min = 1;
     let quantity = Number(input.text());
-
     if (quantity > Min) {
       input.text(--quantity);
     }
   });
-
 
   // Checkout Button
   $(".checkout button").click(function () {
