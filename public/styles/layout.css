@@ -1,3 +1,6 @@
+/*
+----------------------- GENERAL STYLINGS ------------------------------
+*/
 :root {
   box-sizing: border-box;
 }
@@ -27,6 +30,9 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/*
+----------------------- MENU BAR STYLINGS ------------------------------
+*/
 .navbar {
   padding: 1.5em;
   display: flex;
@@ -84,6 +90,9 @@ body {
   cursor: pointer;
 }
 
+/*
+----------------------- FOOD AND DRINKS SEARCH BOX STYLINGS ------------------------------
+*/
 .search-container .change-color {
   position: relative;
   width: 60%;
@@ -108,6 +117,9 @@ body {
   cursor: pointer;
 }
 
+/*
+----------------------- HOME DECORATIONS STYLINGS ------------------------------
+*/
 .shape-decoration {
   width: 100%;
   display: flex;
@@ -159,8 +171,4 @@ body {
 .bg-to-blue {
   background-color: #608af8;
   color: #e8efff;
-}
-
-.credit-size {
-  font-size: 1.5em;
 }
