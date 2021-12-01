@@ -49,20 +49,11 @@ const blueBannerContent = () => {
 };
 
 // eslint-disable-next-line no-undef
-<<<<<<< HEAD
-$(document).ready(function() {
-=======
 $(document).ready(function () {
->>>>>>> 7411d839fffe108f40893c33d1c4cbeb9b6b933d
   // eslint-disable-next-line no-undef
   $('.menu').append(createNavBar);
   $('.user-address').append(buyDetails);
   $('.shape-decoration').append(createDecoration);
   $('.blue-container').append(blueBannerContent);
-  $('.payment').append(payment);
 });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 7411d839fffe108f40893c33d1c4cbeb9b6b933d
