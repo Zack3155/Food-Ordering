@@ -76,10 +76,8 @@ header .name {
   flex-direction: row;
   margin-top: 10px;
 }
-.content footer .quantity textarea {
-  width: 42px;
-  height: 25px;
-  text-align: center;
+.content footer .quantity output {
+  font-weight: bold;
 }
 .content footer .quantity .add,
 .content footer .quantity .minus {
