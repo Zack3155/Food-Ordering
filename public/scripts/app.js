@@ -8,9 +8,9 @@ const createNavBar = () => {
          <img alt="logo" src="../logo/logo.svg">
       </div>
       <ul class="menu-item-container">
-        <li><a>Home</a></li>
-        <li><a>Menu</a></li>
-        <li><a>Contact</a></li>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
       <div class="cart">
          <img alt="logo" src="../images/cart.svg">
