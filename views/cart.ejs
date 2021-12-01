@@ -26,7 +26,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- Page CSS -->
-  <link rel="stylesheet" href="/styles/contact.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/cart.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
   <!-- App JS -->
@@ -37,7 +37,45 @@
 
 <body>
   <section class="menu"></section>
-  <div class="order-container">
+  <div class="cart-container">
+    <h2>Here are your current dishes</h2>
+
+    <section class="dishes">
+      <!-- Hard Coded, will be converted to dynamic -->
+      <div class="dish-container">
+        <header>
+          <p class="name">Brent Hofacker</p>
+          <img
+            src="https://loveincorporated.blob.core.windows.net/contentimages/gallery/1a63ff95-171e-4052-ab24-ac4c1c1c58d6-beef-wellington.jpg">
+        </header>
+
+        <div class="content">
+          <div class="remove"><button><i class="far fa-trash-alt"></i></button></div>
+
+          <article>
+            <p>A dish that's fallen out of favour and then become popular again more times than we can
+              count, beef Wellington's origins
+              are as unclear as its connection to Arthur Wellesley, 1st Duke of Wellington.</p>
+          </article>
+
+          <footer>
+            <p>Please Edit the Quantity</p>
+            <div class="quantity">
+              <button class="minus"><i class="fas fa-angle-double-left"></i></button>
+              <div class="quantity-input"><textarea>1</textarea></div>
+              <button class="add"><i class="fas fa-angle-double-right"></i></button>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <!-- End Here -->
+    </section>
+
+    <section class="checkout">
+      <output class="total">Total: 0 CAD</output>
+      <button>Checkout</button>
+    </section>
+
   </div>
 </body>
 

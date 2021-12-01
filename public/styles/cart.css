@@ -1,0 +1,117 @@
+.cart-container {
+  font: 100% Nunito, sans-serif;
+}
+.cart-container h2 {
+  margin: 0;
+  text-align: center;
+  color: lightslategray;
+  padding: 15px;
+}
+
+.dish-container {
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: lightslategray;
+}
+
+.dish-container:hover {
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+header {
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+header img {
+  width: 200px;
+  height: 150px;
+}
+header .name {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  font-weight: bold;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  align-items: flex-end;
+}
+.content .remove {
+  width: 15px;
+  height: 30px;
+  padding-top: 5px;
+  margin-right: 10px;
+}
+.content .remove button {
+  border: 0;
+  background-color: white;
+}
+.content .remove i:hover {
+  color: red;
+}
+.content article {
+  margin-top: 10px;
+}
+.content article p {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+.content footer p {
+  margin-top: 5px;
+  font-size: small;
+  font-weight: bold;
+  color: #608af8;
+}
+.content footer .quantity {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.content footer .quantity textarea {
+  width: 42px;
+  height: 25px;
+  text-align: center;
+}
+.content footer .quantity .add,
+.content footer .quantity .minus {
+  width: 28px;
+  height: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 50%;
+  border-style: none;
+  color: white;
+  background-color: #608af8;
+}
+.content footer .quantity .add:hover,
+.content footer .quantity .minus:hover {
+  background-color: salmon;
+}
+
+.checkout {
+  position: fixed;
+  font-weight: bolder;
+  bottom: 30px;
+  right: 20px;
+  color: #608af8;
+}
+.checkout button {
+  font-size: large;
+  color: white;
+  margin-left: 15px;
+  background-color: red;
+  color: lightgrey;
+  border: 0;
+}
+.checkout button:hover {
+  color: white;
+}
