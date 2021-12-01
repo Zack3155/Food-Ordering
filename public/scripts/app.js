@@ -58,33 +58,29 @@ const blueBannerContent = () => {
 // Dishes example
 let dishes = [{ a: 1 }, { b: 2 }, { c: 3 }, { d: 4 }, { e: 5 }, { f: 6 }, { g: 7 }, { h: 8 }, { i: 9 }];
 
-
-
 // Remove dish from Dishes given by its name
 // Return a COPY of modified Dishes
 const removeDish = function (dish_name, dishes) {
   return dishes.filter(itm => !itm[dish_name]);
 };
 
-// Add dish with its quantity to Dishes
+// Add dish to Dishes given by dish's name & dish's quantity
 const addDish = function (dish_name, quantity, dishes) {
   let obj = {};
   obj[dish_name] = quantity
   dishes.push(obj);
 };
 
-// Modifies given dish's quantity
+// Modifies dishes given by dish's name & dish's quantity
 const setDishQuantity = function (dish_name, quantity, dishes) {
   for (const itm of dishes) {
-    if (itm[dish_name])
+    if (itm[dish_name]) {
       itm[dish_name] = quantity;
+    }
   }
 };
 
-
-
-
-
+///////////////////////////////////////////////////////////////////////////////////////////////
 // Cart Page Logic Implementation
 // Create single cart item
 const createCartItem = function (name, pic_url, intro, quantity) {
