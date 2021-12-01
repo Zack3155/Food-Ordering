@@ -25,7 +25,7 @@ const searchButton = () => {
 
     `<div class="mb-3  form-control-lg change-color">
         <input type="text" class="form-control" id="phoneNumber" placeholder="food, drinks, deserts etc.">
-        <div class="arrow-container"><i class="fas fa-arrow-alt-circle-right"></i></div>
+        <button class="arrow-container"><i class="fas fa-arrow-alt-circle-right"></i></button>
     </div>` // end of real div
   );
 };
