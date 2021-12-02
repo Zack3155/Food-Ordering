@@ -3,7 +3,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // Client Side Logic Implementation
 
-
 // Remove dish from Dishes given by its name
 // Return a COPY of modified Dishes
 const removeDish = function (dish_name, dishes) {
@@ -34,7 +33,6 @@ const countCartItems = function (dishes) {
   }
   return result;
 };
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // Cart Page Logic Implementation
@@ -101,7 +99,7 @@ const loadCart = function () {
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-
+// DOM Logic Implementation
 let dishes = [];
 let total = 0;
 let quantity = 0;
@@ -111,11 +109,7 @@ loadCart();
 
 $(document).ready(function () {
   // Code Test Section
-  console.log(dishes);
-
-
-  ///////////////////////////////////////////////////////////////////////////////////////////////
-  // Cart Page Implementation
+  //console.log(dishes);
 
   // Show a number on the cart icon
   quantity = countCartItems(dishes);
@@ -206,9 +200,6 @@ $(document).ready(function () {
     event.preventDefault();
     window.location.href = "/checkout";
   });
-
-
-  ///////////////////////////////////////////////////////////////////////////////////////////////
 });
 
 module.exports = { total };
