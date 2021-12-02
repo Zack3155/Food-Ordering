@@ -1,6 +1,4 @@
 
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // Client Side Logic Implementation
 
@@ -77,11 +75,25 @@ const renderCart = function (dishes) {
 $(document).ready(function () {
   // Code Test Section
   //console.log(getDishPrice('coca cola'));
+  $.ajax(
+    {
+      url: '/cart',
+      method: 'PUT',
+      dataType: 'json',
+      success: (data) => {
+        console.log(data);
+      },
+      error: (err) => {
+        alert(`there was an error: ${err}`);
+      }
+    }
+  );
 
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
   // Cart Page Implementation
   renderCart(dishes);
+
 
   // Remove Button
   $(".remove button").click(function (event) {
@@ -118,8 +130,12 @@ $(document).ready(function () {
       let $ordersAdded = $('.order-counter').text();
       let $addOrder = Number($ordersAdded) + 1;
       $('.order-counter').text($addOrder);
-
     }
+
+    // Call for AJAX Shortcut
+    // ajax('PUT', '/cart').then(data => {
+    //   console.log(data);
+    // });
 
   });
 
