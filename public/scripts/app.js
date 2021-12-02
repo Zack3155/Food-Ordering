@@ -9,7 +9,7 @@ const createNavBar = () => {
       </div>
       <ul class="menu-item-container">
         <li><a href="/home">Home</a></li>
-        <li><a href="/home/#menu">Menu</a></li>
+        <li><a href="/menu">Menu</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <div class="cart">
