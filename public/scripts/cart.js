@@ -92,7 +92,7 @@ const loadCart = function () {
       method: 'PUT',
       dataType: 'json',
       success: (data) => {
-        renderCart(data);
+        renderCart(data); // call for render cart content
       },
       error: (err) => {
         alert(`there was an error: ${err}`);
