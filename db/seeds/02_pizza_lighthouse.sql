@@ -1,6 +1,5 @@
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -11,19 +10,17 @@ INSERT INTO
   )
 VALUES
   (
-    1,
-    'soda',
+    'coca cola',
     'drinks',
     2,
-    'random.png',
+    '../../public/images/db_img/coca_cola.png',
     2,
-    'Pepsi, Sprite, Dr. Pepper, ginger ale, Cream soda, Orange Crush, Water',
+    'Coca Cola',
     TRUE
   );
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -34,11 +31,94 @@ INSERT INTO
   )
 VALUES
   (
+    'sprite',
+    'drinks',
     2,
+    '../../public/images/db_img/sprite.png',
+    2,
+    'Sprite',
+    TRUE
+  );
+
+INSERT INTO
+  dishes (
+    name,
+    category,
+    price,
+    photo_url,
+    preparation,
+    description,
+    active
+  )
+VALUES
+  (
+    'fanta',
+    'drinks',
+    2,
+    '../../public/images/db_img /fanta.png',
+    2,
+    'Orange fanta',
+    TRUE
+  );
+
+INSERT INTO
+  dishes (
+    name,
+    category,
+    price,
+    photo_url,
+    preparation,
+    description,
+    active
+  )
+VALUES
+  (
+    'ginger ale',
+    'drinks',
+    2,
+    '../../public/images/db_img /ginger-ale.png',
+    2,
+    'ginger ale',
+    TRUE
+  );
+
+INSERT INTO
+  dishes (
+    name,
+    category,
+    price,
+    photo_url,
+    preparation,
+    description,
+    active
+  )
+VALUES
+  (
+    'water',
+    'drinks',
+    2,
+    '../../public/images/db_img /water.png',
+    2,
+    'dasani water',
+    TRUE
+  );
+
+INSERT INTO
+  dishes (
+    name,
+    category,
+    price,
+    photo_url,
+    preparation,
+    description,
+    active
+  )
+VALUES
+  (
     'poutine',
     'appetizer',
     8,
-    'random.png',
+    '../../public/images/db_img /poutine.png',
     8,
     'French fries with gravy and cheese',
     TRUE
@@ -46,7 +126,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -57,11 +136,10 @@ INSERT INTO
   )
 VALUES
   (
-    3,
     'Chicken Wings',
     'appetizer',
     10,
-    'random.png',
+    '../../public/images/db_img /chicken_wings.png',
     10,
     '10 Chicken Wings choice of sauces: Bbq, Buffalo, Sweet & Sour',
     TRUE
@@ -69,7 +147,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -80,11 +157,10 @@ INSERT INTO
   )
 VALUES
   (
-    4,
     'Cheese sticks',
     'appetizer',
     7,
-    'random.png',
+    '../../public/images/db_img /cheese_sticks.png',
     6,
     '6 fried cheese sticks',
     TRUE
@@ -92,7 +168,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -103,11 +178,10 @@ INSERT INTO
   )
 VALUES
   (
-    5,
     'Garden Salad',
     'appetizer',
     10,
-    'random.png',
+    '../../public/images/db_img /garden_salad.png',
     8,
     'Lettuce, green peppers, tomatoes, cucumbers',
     TRUE
@@ -115,7 +189,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -126,19 +199,17 @@ INSERT INTO
   )
 VALUES
   (
-    6,
     'Greek Salad',
     'appetizer',
     11,
-    'random.png',
+    '../../public/images/db_img /greek_salad.png',
     8,
-    'Lettuce, green peppers, tomatoes, cucumbers, feta, bl;ack olives',
+    'Lettuce, green peppers, tomatoes, cucumbers, feta, black olives',
     TRUE
   );
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -149,11 +220,10 @@ INSERT INTO
   )
 VALUES
   (
-    7,
     'Ceasar Salad',
     'appetizer',
     12,
-    'random.png',
+    '../../public/images/db_img /ceasar_salad.png',
     9,
     'Lettuce, croutons, parmesan cheese, ceasar dressing',
     TRUE
@@ -161,7 +231,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -172,11 +241,10 @@ INSERT INTO
   )
 VALUES
   (
-    8,
     'Zuchinni chips',
     'appetizer',
     10,
-    'random.png',
+    '../../public/images/db_img /zuchinni_chips.png',
     10,
     'Fried zuchinni chips with garlic dip',
     TRUE
@@ -184,7 +252,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -195,11 +262,10 @@ INSERT INTO
   )
 VALUES
   (
-    9,
     'BLT',
     'Entree',
     12,
-    'random.png',
+    '../../public/images/db_img /blt.png',
     10,
     'Bacon, lettuce, tomatoe sandwhich',
     TRUE
@@ -207,7 +273,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -218,11 +283,10 @@ INSERT INTO
   )
 VALUES
   (
-    10,
-    'Philly cheese steak',
+    'Philly Cheese steak',
     'Entree',
     14,
-    'random.png',
+    '../../public/images/db_img /philly_cheesesteak.png',
     10,
     'Philly steak, mushrooms, swiss cheese',
     TRUE
@@ -230,7 +294,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -241,11 +304,10 @@ INSERT INTO
   )
 VALUES
   (
-    11,
     'Hamburger',
     'Entree',
     15,
-    'random.png',
+    '../../public/images/db_img /hamburger.png',
     10,
     'All dressed hamburger with fries',
     TRUE
@@ -253,7 +315,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -264,11 +325,10 @@ INSERT INTO
   )
 VALUES
   (
-    12,
     'Cheeseburger',
     'Entree',
     17,
-    'random.png',
+    '../../public/images/db_img /cheeseburger.png',
     10,
     'All dressed Cheeseburger with fries',
     TRUE
@@ -276,7 +336,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -287,11 +346,10 @@ INSERT INTO
   )
 VALUES
   (
-    13,
     'Veggie burger',
     'Entree',
     12,
-    'random.png',
+    '../../public/images/db_img /veggie_burger.png',
     10,
     'Mushroom burger with fries',
     TRUE
@@ -299,7 +357,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -310,11 +367,10 @@ INSERT INTO
   )
 VALUES
   (
-    14,
     'Chicken burger',
     'Entree',
     14,
-    'random.png',
+    '../../public/images/db_img /chicken_burger.png',
     10,
     'All dressed Chicken burger with fries',
     TRUE
@@ -322,7 +378,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -333,11 +388,10 @@ INSERT INTO
   )
 VALUES
   (
-    15,
     'Plain Pizza',
     'Entree',
     16,
-    'random.png',
+    '../../public/images/db_img /plain_pizza.png',
     20,
     'Toppings: Cheese',
     TRUE
@@ -345,7 +399,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -356,11 +409,10 @@ INSERT INTO
   )
 VALUES
   (
-    16,
     'Pepperoni Pizza',
     'Entree',
     19,
-    'random.png',
+    '../../public/images/db_img /pepperoni_pizza.png',
     20,
     'Toppings: Cheese, pepperoni',
     TRUE
@@ -368,7 +420,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -379,11 +430,10 @@ INSERT INTO
   )
 VALUES
   (
-    17,
     'All Dressed Pizza',
     'Entree',
     19,
-    'random.png',
+    '../../public/images/db_img /all_dressed_pizza.png',
     20,
     'Toppings: Cheese, pepperoni, peppers',
     TRUE
@@ -391,7 +441,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -402,11 +451,10 @@ INSERT INTO
   )
 VALUES
   (
-    18,
     'Meat Pizza',
     'Entree',
     19,
-    'random.png',
+    '../../public/images/db_img /meat_lover.png',
     20,
     'Toppings: Cheese, pepperoni, ground beef, bacon',
     TRUE
@@ -414,7 +462,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -425,11 +472,10 @@ INSERT INTO
   )
 VALUES
   (
-    19,
     'Vegetarian Pizza',
     'Entree',
     19,
-    'random.png',
+    '../../public/images/db_img /vegetarian_pizza.png',
     20,
     'Toppings: Cheese, tomatoes, peppers, onions',
     TRUE
@@ -437,7 +483,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -448,11 +493,10 @@ INSERT INTO
   )
 VALUES
   (
-    20,
     'Brownie',
     'Dessert',
     8,
-    'random.png',
+    '../../public/images/db_img /brownie.png',
     5,
     'Chocolate brownie',
     TRUE
@@ -460,7 +504,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -471,19 +514,17 @@ INSERT INTO
   )
 VALUES
   (
-    21,
     'Cheese Cake',
     'Dessert',
     8,
-    'random.png',
+    '../../public/images/db_img /cheesecake.png',
     5,
-    'Strawberry cheese cake',
+    'Strawberry cheesecake',
     TRUE
   );
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -494,11 +535,10 @@ INSERT INTO
   )
 VALUES
   (
-    22,
     'Cookies',
     'Dessert',
     5,
-    'random.png',
+    '../../public/images/db_img /cookies.png',
     2,
     'Chocolate chip cookies',
     TRUE
