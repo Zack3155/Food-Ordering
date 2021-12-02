@@ -23,6 +23,7 @@ h1 {
   flex-direction: column;
   color: white;
   text-align: center;
+  padding: 2.5em;
 }
 .intro p {
   margin: 0;
