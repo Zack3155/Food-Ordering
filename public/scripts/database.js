@@ -59,7 +59,7 @@ WHERE
 };
 
 
-// Add a client record to databse given a client object
+// Insert a client record to databse given a client object
 // @return {Promise<{}>}
 const addClient = function (client) {
   const values = [client.name, client.phone, client.street, client.city, client.province, client.post_Code, client.name];
@@ -81,7 +81,7 @@ const addClient = function (client) {
     .catch((err) => console.log(err.message));
 };
 
-// Add a order record to databse given a order object
+// Insert a order record to databse given a order object
 // @return {Promise<{}>}
 const addOrder = function (order) {
   const values = [order.client_id, order.total, order.estimate, order.time, order.note];
@@ -96,10 +96,18 @@ const addOrder = function (order) {
 };
 
 
-//
-//
-const addDish_orders = function (dish_id, order_id, quantity) {
-
+// Insert a dish-order pair record to databse given a dish_order object
+// @return {Promise<{}>}
+const addDish_orders = function (dish_order) {
+  const values = [dish_order.order_id, dish_order.dish_id, dish_order.cost, dish_order.dish_quantity];
+  const queryString = (`
+  INSERT INTO dish_orders (${Object.keys(dish_order).join()})
+  SELECT $1, $2, $3, $4
+  RETURNING *;
+  `);
+  return pool.query(queryString, values)
+    .then((result) => result.rows[0])
+    .catch((err) => console.log(err.message));
 };
 
 
