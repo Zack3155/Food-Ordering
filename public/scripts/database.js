@@ -10,14 +10,11 @@ db.connect();
 const getPrice = function (dish_name) {
   const values = [dish_name];
   const queryString = (
-    `SELECT
-  price
-FROM
-  dishes
-WHERE
-  name = 'coca cola';`
+    `SELECT price
+     FROM dishes
+     WHERE name = 'coca cola';`
   );
-}
+};
 
 
 
