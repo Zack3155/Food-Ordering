@@ -9,7 +9,14 @@ db.connect();
 // Given dish name, return the price for this dish
 const getPrice = function (dish_name) {
   const values = [dish_name];
-  const queryString = ``;
+  const queryString = (
+    `SELECT
+  price
+FROM
+  dishes
+WHERE
+  name = 'coca cola';`
+  );
 }
 
 

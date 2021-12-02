@@ -1,6 +1,5 @@
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -11,7 +10,6 @@ INSERT INTO
   )
 VALUES
   (
-    1,
     'coca cola',
     'drinks',
     2,
@@ -23,7 +21,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -34,7 +31,6 @@ INSERT INTO
   )
 VALUES
   (
-    23,
     'sprite',
     'drinks',
     2,
@@ -46,7 +42,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -57,7 +52,6 @@ INSERT INTO
   )
 VALUES
   (
-    24,
     'fanta',
     'drinks',
     2,
@@ -69,7 +63,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -80,7 +73,6 @@ INSERT INTO
   )
 VALUES
   (
-    25,
     'ginger ale',
     'drinks',
     2,
@@ -92,7 +84,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -103,7 +94,6 @@ INSERT INTO
   )
 VALUES
   (
-    26,
     'water',
     'drinks',
     2,
@@ -115,7 +105,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -126,7 +115,6 @@ INSERT INTO
   )
 VALUES
   (
-    2,
     'poutine',
     'appetizer',
     8,
@@ -138,7 +126,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -149,7 +136,6 @@ INSERT INTO
   )
 VALUES
   (
-    3,
     'Chicken Wings',
     'appetizer',
     10,
@@ -161,7 +147,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -172,7 +157,6 @@ INSERT INTO
   )
 VALUES
   (
-    4,
     'Cheese sticks',
     'appetizer',
     7,
@@ -184,7 +168,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -195,7 +178,6 @@ INSERT INTO
   )
 VALUES
   (
-    5,
     'Garden Salad',
     'appetizer',
     10,
@@ -207,7 +189,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -218,7 +199,6 @@ INSERT INTO
   )
 VALUES
   (
-    6,
     'Greek Salad',
     'appetizer',
     11,
@@ -230,7 +210,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -241,7 +220,6 @@ INSERT INTO
   )
 VALUES
   (
-    7,
     'Ceasar Salad',
     'appetizer',
     12,
@@ -253,7 +231,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -264,7 +241,6 @@ INSERT INTO
   )
 VALUES
   (
-    8,
     'Zuchinni chips',
     'appetizer',
     10,
@@ -276,7 +252,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -287,7 +262,6 @@ INSERT INTO
   )
 VALUES
   (
-    9,
     'BLT',
     'Entree',
     12,
@@ -299,7 +273,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -310,7 +283,6 @@ INSERT INTO
   )
 VALUES
   (
-    10,
     'Philly Cheese steak',
     'Entree',
     14,
@@ -322,7 +294,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -333,7 +304,6 @@ INSERT INTO
   )
 VALUES
   (
-    11,
     'Hamburger',
     'Entree',
     15,
@@ -345,7 +315,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -356,7 +325,6 @@ INSERT INTO
   )
 VALUES
   (
-    12,
     'Cheeseburger',
     'Entree',
     17,
@@ -368,7 +336,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -379,7 +346,6 @@ INSERT INTO
   )
 VALUES
   (
-    13,
     'Veggie burger',
     'Entree',
     12,
@@ -391,7 +357,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -402,7 +367,6 @@ INSERT INTO
   )
 VALUES
   (
-    14,
     'Chicken burger',
     'Entree',
     14,
@@ -414,7 +378,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -425,7 +388,6 @@ INSERT INTO
   )
 VALUES
   (
-    15,
     'Plain Pizza',
     'Entree',
     16,
@@ -437,7 +399,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -448,7 +409,6 @@ INSERT INTO
   )
 VALUES
   (
-    16,
     'Pepperoni Pizza',
     'Entree',
     19,
@@ -460,7 +420,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -471,7 +430,6 @@ INSERT INTO
   )
 VALUES
   (
-    17,
     'All Dressed Pizza',
     'Entree',
     19,
@@ -483,7 +441,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -494,7 +451,6 @@ INSERT INTO
   )
 VALUES
   (
-    18,
     'Meat Pizza',
     'Entree',
     19,
@@ -506,7 +462,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -517,7 +472,6 @@ INSERT INTO
   )
 VALUES
   (
-    19,
     'Vegetarian Pizza',
     'Entree',
     19,
@@ -529,7 +483,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -540,7 +493,6 @@ INSERT INTO
   )
 VALUES
   (
-    20,
     'Brownie',
     'Dessert',
     8,
@@ -552,7 +504,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -563,7 +514,6 @@ INSERT INTO
   )
 VALUES
   (
-    21,
     'Cheese Cake',
     'Dessert',
     8,
@@ -575,7 +525,6 @@ VALUES
 
 INSERT INTO
   dishes (
-    id,
     name,
     category,
     price,
@@ -586,7 +535,6 @@ INSERT INTO
   )
 VALUES
   (
-    22,
     'Cookies',
     'Dessert',
     5,
