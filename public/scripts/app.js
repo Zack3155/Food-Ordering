@@ -9,7 +9,7 @@ const createNavBar = () => {
       </div>
       <ul class="menu-item-container">
         <li><a href="/home">Home</a></li>
-        <li><a href="#menu">Menu</a></li>
+        <li><a href="/home/#menu">Menu</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <div class="cart">
@@ -121,13 +121,18 @@ const dishes = [{ a: 1 }, { b: 2 }, { c: 3 }, { d: 4 }, { e: 5 }, { f: 6 }, { g:
 
 // Remove dish from Dishes given by its name
 // Return modified Dishes
+// eslint-disable-next-line camelcase
 const removeDish = function(dish_name, dishes) {
+  // eslint-disable-next-line camelcase
   return dishes.filter(itm => !itm[dish_name]);
 };
 
+// eslint-disable-next-line camelcase
 const setDishQuantity = function(dish_name, quantity, dishes) {
   for (const itm of dishes) {
+    // eslint-disable-next-line camelcase
     if (itm[dish_name])
+    // eslint-disable-next-line camelcase
       itm[dish_name] = quantity;
   }
   return dishes;
@@ -139,13 +144,14 @@ const setDishQuantity = function(dish_name, quantity, dishes) {
 
 // Cart Page Logic Implementation
 // Create single cart item
-const createCartItem = function(name, pic_url, intro, quantity) {
+// eslint-disable-next-line camelcase
+const createCartItem = function(name, picUrl, intro, quantity) {
   return (`
   <div class="dish-container">
         <header>
           <p class="name">${name}</p>
           <img
-            src="${pic_url}">
+            src="${picUrl}">
         </header>
         <div class="content">
           <div class="remove"><button><i class="far fa-trash-alt"></i></button></div>
@@ -169,11 +175,11 @@ const createCartItem = function(name, pic_url, intro, quantity) {
 const renderCart = function(dishes) {
   const itemsIncart = [];
   const name = 'Photosimysia';
-  const pic_url = 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/88f787f4-40c9-4084-92f1-5df6dc94fb72-french-onion-soup.jpg';
+  const picUrl = 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/88f787f4-40c9-4084-92f1-5df6dc94fb72-french-onion-soup.jpg';
   const intro = `Very few dishes are as comforting as French onion soup – a blend of mellow, slowly cooked, caramelised onions in a broth laced with white wine and cognac. It's thought that a version of the soup has existed since at least Roman times, but the modern version originated in 18th-century Paris. The soup is served in a ramekin, topped with a slice of baguette and cheese that's then melted under a grill.`;
   const quantity = '1';
   const cartContainer = $('.dishes');
-  const $itm = createCartItem(name, pic_url, intro, quantity);
+  const $itm = createCartItem(name, picUrl, intro, quantity);
   
   itemsIncart.push(cartContainer.append($itm));
   itemsIncart.push(cartContainer.append($itm));
