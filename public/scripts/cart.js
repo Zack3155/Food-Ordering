@@ -44,13 +44,16 @@ const createCartItem = function (dish, quantity) {
   const name = dish.name;
   const photo_url = dish.photo_url;
   const intro = dish.description;
-  addDish(name, quantity, dishes); // add dish to Dishes array
+  const price = dish.price;
+  addDish(name, quantity, dishes); // add dish-quantity pair to Dishes array
+  total += price; // update the price
   return (`
   <div class="dish-container">
         <header>
           <p class="name">${name}</p>
           <img
             src="${photo_url}">
+          <p><span class="price">${price}</span> CAD Each</p>
         </header>
         <div class="content">
           <div class="remove"><button><i class="far fa-trash-alt"></i></button></div>
@@ -99,6 +102,8 @@ const loadCart = function () {
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 let dishes = [];
+let total = 0;
+let quantity = 0;
 loadCart();
 
 
@@ -111,9 +116,12 @@ $(document).ready(function () {
   ///////////////////////////////////////////////////////////////////////////////////////////////
   // Cart Page Implementation
 
-  // Update number on the cart icon
-  let quantity = countCartItems(dishes);
+  // Show a number on the cart icon
+  quantity = countCartItems(dishes);
   $('.order-counter').text(quantity);
+  // Show the total price
+  $('.total').text(total);
+
 
   // Remove Button
   $(".remove button").on("click", function (event) {
@@ -133,6 +141,9 @@ $(document).ready(function () {
     setDishQuantity(name, quantity - number, dishes);
 
     // upate total price on the cart
+    const price = number * Number(container.find('.price').text());
+    total -= price;
+    $('.total').text(total);
 
     // Remove this dish from cart
     container.remove();
@@ -156,6 +167,10 @@ $(document).ready(function () {
       let $ordersAdded = $('.order-counter').text();
       let $addOrder = Number($ordersAdded) + 1;
       $('.order-counter').text($addOrder);
+
+      // update total price
+      total += Number(container.find('.price').text());
+      $('.total').text(total);
     }
 
   });
@@ -179,6 +194,9 @@ $(document).ready(function () {
       $ordersAdded = Number($ordersAdded) - 1;
       $('.order-counter').text($ordersAdded);
 
+      // update total price
+      total -= Number(container.find('.price').text());
+      $('.total').text(total);
     }
   });
 
@@ -191,3 +209,5 @@ $(document).ready(function () {
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
 });
+
+module.exports = { total };

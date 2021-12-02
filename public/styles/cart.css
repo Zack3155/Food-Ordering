@@ -36,6 +36,9 @@ header .name {
   margin: 0;
   font-weight: bold;
 }
+header p {
+  text-align: center;
+}
 
 .content {
   width: 100%;
