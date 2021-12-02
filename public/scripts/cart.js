@@ -25,11 +25,19 @@ const setDishQuantity = function (dish_name, quantity, dishes) {
   }
 };
 
+// Count the total number of items in the cart
+const countCartItems = function (dishes) {
+  let result = 0;
+  for (const itm of dishes) {
+    result += Number(Object.values(itm));
+  }
+  return result;
+};
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // Cart Page Logic Implementation
 
-let dishes = [];
 // Create single cart item by given dish object and its quantity
 // Also push the dish item to dishes
 const createCartItem = function (dish, quantity) {
@@ -67,7 +75,7 @@ const renderCart = function (dishes) {
   const cartContainer = $('.dishes');
   cartContainer.empty();
   for (const itm of dishes) {
-    const $itm = createCartItem(itm, 2);
+    const $itm = createCartItem(itm, 1);
     cartContainer.append($itm);
   }
 }
@@ -90,7 +98,10 @@ const loadCart = function () {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
+let dishes = [];
 loadCart();
+
+
 
 $(document).ready(function () {
   // Code Test Section
@@ -100,26 +111,31 @@ $(document).ready(function () {
   ///////////////////////////////////////////////////////////////////////////////////////////////
   // Cart Page Implementation
 
+  // Update number on the cart icon
+  let quantity = countCartItems(dishes);
+  $('.order-counter').text(quantity);
 
   // Remove Button
   $(".remove button").on("click", function (event) {
     event.preventDefault();
 
     // Remove the current dish from cart page
-    const dish = $(this).closest(".dish-container");
+    const container = $(this).closest(".dish-container");
 
     // Remove dish from Dishes array
-    const name = dish.find('.name').text();
+    const name = container.find('.name').text();
     dishes = removeDish(name, dishes);
-    //console.log(dishes);
 
     // update items count on the cart
-    let $ordersLeft = $('.order-counter').text();
-    $ordersLeft = Number($ordersLeft) - 1;
-    $('.order-counter').text($ordersLeft);
+    const number = Number(container.find('output').text());
+    let $curr = Number($('.order-counter').text()) - number;
+    $('.order-counter').text($curr);
+    setDishQuantity(name, quantity - number, dishes);
+
+    // upate total price on the cart
 
     // Remove this dish from cart
-    dish.remove();
+    container.remove();
   });
 
   // Add Button
