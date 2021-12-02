@@ -21,13 +21,12 @@ const createNavBar = () => {
 };
 
 const searchButton = () => {
-  // <label for="phoneNumber" class="form-label label-default">Phone</label>
   return (
 
     `<div class="mb-3  form-control-lg change-color">
         <input type="text" class="form-control" id="phoneNumber" placeholder="food, drinks, deserts etc.">
         <button class="arrow-container"><i class="fas fa-arrow-alt-circle-right"></i></button>
-    </div>` // end of real div
+    </div>`
   );
 };
 
@@ -36,7 +35,6 @@ const createDecoration = () => {
   <div class="rectangle"></div>
   <div class="hook-container">
     Quality and Quantity <br/> are our answers to your cravings.
-
   </div>
   `);
 };
@@ -111,16 +109,21 @@ const createCartItem = function (name, pic_url, intro, quantity) {
 
 // Dynamically show cart content according to Dishes array
 const renderCart = function (dishes) {
+  const itemsIncart = [];
   const name = 'Photosimysia'
   const pic_url = 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/88f787f4-40c9-4084-92f1-5df6dc94fb72-french-onion-soup.jpg'
   const intro = `Very few dishes are as comforting as French onion soup – a blend of mellow, slowly cooked, caramelised onions in a broth laced with white wine and cognac. It's thought that a version of the soup has existed since at least Roman times, but the modern version originated in 18th-century Paris. The soup is served in a ramekin, topped with a slice of baguette and cheese that's then melted under a grill.`
   const quantity = '1'
   const cartContainer = $('.dishes');
   const $itm = createCartItem(name, pic_url, intro, quantity);
-  cartContainer.append($itm);
-  cartContainer.append($itm);
-  cartContainer.append($itm);
-}
+  
+  itemsIncart.push(cartContainer.append($itm));
+  itemsIncart.push(cartContainer.append($itm));
+  itemsIncart.push(cartContainer.append($itm));
+  itemsIncart.push(cartContainer.append($itm));
+
+  $('.order-counter').text(itemsIncart.length);
+};
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -134,8 +137,9 @@ $(document).ready(function () {
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
   // Cart Page Implementation
-
   renderCart(dishes);
+  
+
 
   // Remove Button
   $(".remove button").click(function () {
@@ -144,6 +148,12 @@ $(document).ready(function () {
 
     // Remove the current dish from cart page
     const dish = $(this).closest(".dish-container")
+
+    // update items count on the cart
+    let $ordersLeft = $('.order-counter').text();
+    $ordersLeft = Number($ordersLeft) - 1;
+    $('.order-counter').text($ordersLeft);
+
     dish.remove();
   });
 
@@ -159,7 +169,15 @@ $(document).ready(function () {
       const name = container.find('.name').text();
       console.log(name, quantity);
       setDishQuantity(name, quantity, dishes);
+
+      // increase count of items in cart
+      let $ordersAdded = $('.order-counter').text();
+      let $addOrder = Number($ordersAdded) + 1;
+      $('.order-counter').text($addOrder);
+      // set quantity data
+
     }
+    
   });
 
   // Minus Button
@@ -175,6 +193,16 @@ $(document).ready(function () {
       console.log(name, quantity);
       setDishQuantity(name, quantity, dishes);
 
+      // there is bug with --quantity
+      quantity = quantity - 1;
+      output.text(quantity);
+      // set quantity data
+
+      // decrement count of items in cart
+      let $ordersAdded = $('.order-counter').text();
+      $ordersAdded = Number($ordersAdded) - 1;
+      $('.order-counter').text($ordersAdded);
+
     }
   });
 
@@ -183,5 +211,8 @@ $(document).ready(function () {
     window.location.href = "/checkout";
   });
   ///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+  
 });
 
