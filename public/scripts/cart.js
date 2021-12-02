@@ -75,8 +75,6 @@ $(document).ready(function () {
   // Cart Page Implementation
   renderCart(dishes);
 
-
-
   // Remove Button
   $(".remove button").click(function (event) {
     event.preventDefault();

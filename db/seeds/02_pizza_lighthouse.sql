@@ -12,12 +12,104 @@ INSERT INTO
 VALUES
   (
     1,
-    'soda',
+    'coca cola',
     'drinks',
     2,
-    'random.png',
+    '../../public/images/db_img/coca_cola.png',
     2,
-    'Pepsi, Sprite, Dr. Pepper, ginger ale, Cream soda, Orange Crush, Water',
+    'Coca Cola',
+    TRUE
+  );
+
+INSERT INTO
+  dishes (
+    id,
+    name,
+    category,
+    price,
+    photo_url,
+    preparation,
+    description,
+    active
+  )
+VALUES
+  (
+    23,
+    'sprite',
+    'drinks',
+    2,
+    '../../public/images/db_img/sprite.png',
+    2,
+    'Sprite',
+    TRUE
+  );
+
+INSERT INTO
+  dishes (
+    id,
+    name,
+    category,
+    price,
+    photo_url,
+    preparation,
+    description,
+    active
+  )
+VALUES
+  (
+    24,
+    'fanta',
+    'drinks',
+    2,
+    '../../public/images/db_img /fanta.png',
+    2,
+    'Orange fanta',
+    TRUE
+  );
+
+INSERT INTO
+  dishes (
+    id,
+    name,
+    category,
+    price,
+    photo_url,
+    preparation,
+    description,
+    active
+  )
+VALUES
+  (
+    25,
+    'ginger ale',
+    'drinks',
+    2,
+    '../../public/images/db_img /ginger-ale.png',
+    2,
+    'ginger ale',
+    TRUE
+  );
+
+INSERT INTO
+  dishes (
+    id,
+    name,
+    category,
+    price,
+    photo_url,
+    preparation,
+    description,
+    active
+  )
+VALUES
+  (
+    26,
+    'water',
+    'drinks',
+    2,
+    '../../public/images/db_img /water.png',
+    2,
+    'dasani water',
     TRUE
   );
 
@@ -38,7 +130,7 @@ VALUES
     'poutine',
     'appetizer',
     8,
-    'random.png',
+    '../../public/images/db_img /poutine.png',
     8,
     'French fries with gravy and cheese',
     TRUE
@@ -61,7 +153,7 @@ VALUES
     'Chicken Wings',
     'appetizer',
     10,
-    'random.png',
+    '../../public/images/db_img /chicken_wings.png',
     10,
     '10 Chicken Wings choice of sauces: Bbq, Buffalo, Sweet & Sour',
     TRUE
@@ -84,7 +176,7 @@ VALUES
     'Cheese sticks',
     'appetizer',
     7,
-    'random.png',
+    '../../public/images/db_img /cheese_sticks.png',
     6,
     '6 fried cheese sticks',
     TRUE
@@ -107,7 +199,7 @@ VALUES
     'Garden Salad',
     'appetizer',
     10,
-    'random.png',
+    '../../public/images/db_img /garden_salad.png',
     8,
     'Lettuce, green peppers, tomatoes, cucumbers',
     TRUE
@@ -130,9 +222,9 @@ VALUES
     'Greek Salad',
     'appetizer',
     11,
-    'random.png',
+    '../../public/images/db_img /greek_salad.png',
     8,
-    'Lettuce, green peppers, tomatoes, cucumbers, feta, bl;ack olives',
+    'Lettuce, green peppers, tomatoes, cucumbers, feta, black olives',
     TRUE
   );
 
@@ -153,7 +245,7 @@ VALUES
     'Ceasar Salad',
     'appetizer',
     12,
-    'random.png',
+    '../../public/images/db_img /ceasar_salad.png',
     9,
     'Lettuce, croutons, parmesan cheese, ceasar dressing',
     TRUE
@@ -176,7 +268,7 @@ VALUES
     'Zuchinni chips',
     'appetizer',
     10,
-    'random.png',
+    '../../public/images/db_img /zuchinni_chips.png',
     10,
     'Fried zuchinni chips with garlic dip',
     TRUE
@@ -199,7 +291,7 @@ VALUES
     'BLT',
     'Entree',
     12,
-    'random.png',
+    '../../public/images/db_img /blt.png',
     10,
     'Bacon, lettuce, tomatoe sandwhich',
     TRUE
@@ -219,10 +311,10 @@ INSERT INTO
 VALUES
   (
     10,
-    'Philly cheese steak',
+    'Philly Cheese steak',
     'Entree',
     14,
-    'random.png',
+    '../../public/images/db_img /philly_cheesesteak.png',
     10,
     'Philly steak, mushrooms, swiss cheese',
     TRUE
@@ -245,7 +337,7 @@ VALUES
     'Hamburger',
     'Entree',
     15,
-    'random.png',
+    '../../public/images/db_img /hamburger.png',
     10,
     'All dressed hamburger with fries',
     TRUE
@@ -268,7 +360,7 @@ VALUES
     'Cheeseburger',
     'Entree',
     17,
-    'random.png',
+    '../../public/images/db_img /cheeseburger.png',
     10,
     'All dressed Cheeseburger with fries',
     TRUE
@@ -291,7 +383,7 @@ VALUES
     'Veggie burger',
     'Entree',
     12,
-    'random.png',
+    '../../public/images/db_img /veggie_burger.png',
     10,
     'Mushroom burger with fries',
     TRUE
@@ -314,7 +406,7 @@ VALUES
     'Chicken burger',
     'Entree',
     14,
-    'random.png',
+    '../../public/images/db_img /chicken_burger.png',
     10,
     'All dressed Chicken burger with fries',
     TRUE
@@ -337,7 +429,7 @@ VALUES
     'Plain Pizza',
     'Entree',
     16,
-    'random.png',
+    '../../public/images/db_img /plain_pizza.png',
     20,
     'Toppings: Cheese',
     TRUE
@@ -360,7 +452,7 @@ VALUES
     'Pepperoni Pizza',
     'Entree',
     19,
-    'random.png',
+    '../../public/images/db_img /pepperoni_pizza.png',
     20,
     'Toppings: Cheese, pepperoni',
     TRUE
@@ -383,7 +475,7 @@ VALUES
     'All Dressed Pizza',
     'Entree',
     19,
-    'random.png',
+    '../../public/images/db_img /all_dressed_pizza.png',
     20,
     'Toppings: Cheese, pepperoni, peppers',
     TRUE
@@ -406,7 +498,7 @@ VALUES
     'Meat Pizza',
     'Entree',
     19,
-    'random.png',
+    '../../public/images/db_img /meat_lover.png',
     20,
     'Toppings: Cheese, pepperoni, ground beef, bacon',
     TRUE
@@ -429,7 +521,7 @@ VALUES
     'Vegetarian Pizza',
     'Entree',
     19,
-    'random.png',
+    '../../public/images/db_img /vegetarian_pizza.png',
     20,
     'Toppings: Cheese, tomatoes, peppers, onions',
     TRUE
@@ -452,7 +544,7 @@ VALUES
     'Brownie',
     'Dessert',
     8,
-    'random.png',
+    '../../public/images/db_img /brownie.png',
     5,
     'Chocolate brownie',
     TRUE
@@ -475,9 +567,9 @@ VALUES
     'Cheese Cake',
     'Dessert',
     8,
-    'random.png',
+    '../../public/images/db_img /cheesecake.png',
     5,
-    'Strawberry cheese cake',
+    'Strawberry cheesecake',
     TRUE
   );
 
@@ -498,7 +590,7 @@ VALUES
     'Cookies',
     'Dessert',
     5,
-    'random.png',
+    '../../public/images/db_img /cookies.png',
     2,
     'Chocolate chip cookies',
     TRUE

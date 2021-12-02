@@ -3,17 +3,15 @@ INSERT INTO
   clients (
     name,
     phone,
-    email,
     street,
     city,
     province,
-    post_code
+    post_Code
   )
 VALUES
   (
     'Alice',
     514 -678 -9876,
-    'example@gmail.com',
     'York Sreet',
     'Toronto',
     'Ontario',
@@ -24,18 +22,16 @@ INSERT INTO
   clients (
     name,
     phone,
-    email,
     street,
     city,
     province,
-    post_code
+    post_Code
   )
 VALUES
   (
     'Kira',
     738 -987 -3456,
-    'kira@gmail.com',
-    'Albert Street',
+    'Alberts Street',
     'Vancouver',
     'British Columbia',
     'B2B 2B2'
