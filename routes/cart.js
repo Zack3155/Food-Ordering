@@ -21,12 +21,11 @@ module.exports = (db) => {
 
 
 
-  router.put("/", (req, res) => {
+  router.put("/list", (req, res) => {
     const queryString = (`SELECT * FROM dishes;`);
     db.query(queryString)
       .then(data => {
-        const result = data.rows;
-        res.json({ result });
+        res.json(data.rows);
       })
       .catch(err => {
         res.status(500).json({ error: err.message });

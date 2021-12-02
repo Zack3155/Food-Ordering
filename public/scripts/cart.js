@@ -2,8 +2,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // Client Side Logic Implementation
 
-// Dishes example
-let dishes = [{ a: 1 }, { b: 2 }, { c: 3 }, { d: 4 }, { e: 5 }, { f: 6 }, { g: 7 }, { h: 8 }, { i: 9 }];
 
 // Remove dish from Dishes given by its name
 // Return a COPY of modified Dishes
@@ -28,17 +26,23 @@ const setDishQuantity = function (dish_name, quantity, dishes) {
 };
 
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // Cart Page Logic Implementation
-// Create single cart item
-const createCartItem = function (name, pic_url, intro, quantity) {
+
+let dishes = [];
+// Create single cart item by given dish object and its quantity
+// Also push the dish item to dishes
+const createCartItem = function (dish, quantity) {
+  const name = dish.name;
+  const photo_url = dish.photo_url;
+  const intro = dish.description;
+  addDish(name, quantity, dishes); // add dish to Dishes array
   return (`
   <div class="dish-container">
         <header>
           <p class="name">${name}</p>
           <img
-            src="${pic_url}">
+            src="${photo_url}">
         </header>
         <div class="content">
           <div class="remove"><button><i class="far fa-trash-alt"></i></button></div>
@@ -60,60 +64,66 @@ const createCartItem = function (name, pic_url, intro, quantity) {
 
 // Dynamically show cart content according to Dishes array
 const renderCart = function (dishes) {
-  const name = 'Photosimysia'
-  const pic_url = 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/88f787f4-40c9-4084-92f1-5df6dc94fb72-french-onion-soup.jpg'
-  const intro = `Very few dishes are as comforting as French onion soup – a blend of mellow, slowly cooked, caramelised onions in a broth laced with white wine and cognac. It's thought that a version of the soup has existed since at least Roman times, but the modern version originated in 18th-century Paris. The soup is served in a ramekin, topped with a slice of baguette and cheese that's then melted under a grill.`
-  const quantity = '1'
   const cartContainer = $('.dishes');
-  const $itm = createCartItem(name, pic_url, intro, quantity);
-  cartContainer.append($itm);
-  cartContainer.append($itm);
-  cartContainer.append($itm);
+  cartContainer.empty();
+  for (const itm of dishes) {
+    const $itm = createCartItem(itm, 2);
+    cartContainer.append($itm);
+  }
 }
-///////////////////////////////////////////////////////////////////////////////////////////////
 
-$(document).ready(function () {
-  // Code Test Section
-  //console.log(getDishPrice('coca cola'));
+// Load the whole cart for displaying cart content
+const loadCart = function () {
   $.ajax(
     {
-      url: '/cart',
+      url: '/cart/list',
       method: 'PUT',
       dataType: 'json',
       success: (data) => {
-        console.log(data);
+        renderCart(data);
       },
       error: (err) => {
         alert(`there was an error: ${err}`);
       }
-    }
-  );
+    });
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+loadCart();
+
+$(document).ready(function () {
+  // Code Test Section
+  console.log(dishes);
 
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
   // Cart Page Implementation
-  renderCart(dishes);
 
 
   // Remove Button
-  $(".remove button").click(function (event) {
+  $(".remove button").on("click", function (event) {
     event.preventDefault();
-    // Remove dish from Dishes array
-    //removeDish(dish_name, dishes);
 
     // Remove the current dish from cart page
     const dish = $(this).closest(".dish-container");
+
+    // Remove dish from Dishes array
+    const name = dish.find('.name').text();
+    dishes = removeDish(name, dishes);
+    //console.log(dishes);
 
     // update items count on the cart
     let $ordersLeft = $('.order-counter').text();
     $ordersLeft = Number($ordersLeft) - 1;
     $('.order-counter').text($ordersLeft);
 
+    // Remove this dish from cart
     dish.remove();
   });
 
   // Add Button
-  $(".add").click(function (event) {
+  $(".add").on("click", function (event) {
     event.preventDefault();
     const container = $(this).closest(".dish-container");
     const output = container.find('output');
@@ -123,8 +133,8 @@ $(document).ready(function () {
       output.text(++quantity);
       // update quantity data
       const name = container.find('.name').text();
-      console.log(name, quantity);
       setDishQuantity(name, quantity, dishes);
+      //console.log(dishes);
 
       // increase count of items in cart
       let $ordersAdded = $('.order-counter').text();
@@ -132,15 +142,10 @@ $(document).ready(function () {
       $('.order-counter').text($addOrder);
     }
 
-    // Call for AJAX Shortcut
-    // ajax('PUT', '/cart').then(data => {
-    //   console.log(data);
-    // });
-
   });
 
   // Minus Button
-  $(".minus").click(function (event) {
+  $(".minus").on("click", function (event) {
     event.preventDefault();
     const container = $(this).closest(".dish-container");
     const output = container.find('output');
@@ -150,8 +155,8 @@ $(document).ready(function () {
       output.text(--quantity);
       // update quantity data
       const name = container.find('.name').text();
-      console.log(name, quantity);
       setDishQuantity(name, quantity, dishes);
+      //console.log(dishes);
 
       // decrement count of items in cart
       let $ordersAdded = $('.order-counter').text();
@@ -162,9 +167,11 @@ $(document).ready(function () {
   });
 
   // Checkout Button
-  $(".checkout button").click(function (event) {
+  $(".checkout button").on("click", function (event) {
     event.preventDefault();
     window.location.href = "/checkout";
   });
+
+
   ///////////////////////////////////////////////////////////////////////////////////////////////
 });
