@@ -1,0 +1,101 @@
+.checkout-container {
+  font: 100% Nunito, sans-serif;
+}
+.checkout-container h2 {
+  margin: 0;
+  text-align: center;
+  color: lightslategray;
+  padding: 15px;
+}
+
+.dish-container {
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: lightslategray;
+}
+
+.new-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.new-container .quantity {
+  display: flex;
+  padding: 0.5em;
+}
+.new-container .quantity .quantity-input {
+  justify-content: center;
+}
+
+container.dish-container:hover {
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+header {
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+header img {
+  width: 100px;
+  height: 75px;
+}
+header .name {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+article {
+  margin-top: 10px;
+}
+article p {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: justify;
+}
+
+footer p {
+  margin-top: 5px;
+  font-size: small;
+  font-weight: bold;
+  color: #608af8;
+}
+footer .quantity {
+  padding-left: 10px;
+  display: flex;
+  text-align: flex-end;
+  margin-top: 60px;
+}
+footer .quantity .quantity-input {
+  width: 42px;
+  height: 25px;
+  text-align: flex-end;
+  font-size: 20px;
+}
+
+.order {
+  position: fixed;
+  font-weight: bolder;
+  bottom: 30px;
+  right: 20px;
+  color: #608af8;
+}
+.order button {
+  font-size: large;
+  color: white;
+  margin-left: 15px;
+  background-color: #608af8;
+  color: lightgrey;
+  border: 0;
+}
+.order button:hover {
+  color: black;
+}

@@ -1,5 +1,3 @@
-// const { dishes } = require('app');
-
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // Client Side Logic Implementation
 
@@ -106,7 +104,6 @@ let quantity = 0;
 loadCart();
 
 
-
 $(document).ready(function () {
   // Code Test Section
   //console.log(dishes);
@@ -202,4 +199,4 @@ $(document).ready(function () {
   });
 });
 
-module.exports = { total };
+modules.exports = { dishes, total };
