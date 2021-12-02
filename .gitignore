@@ -2,6 +2,7 @@ node_modules/
 *.log
 *.sqlite3
 css.map
+.env
 
 # Logs
 logs

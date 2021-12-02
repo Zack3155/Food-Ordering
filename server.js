@@ -49,7 +49,7 @@ const addressRoutes = require("./routes/address");
 // app.use("/api/users", usersRoutes(db));
 // app.use("/api/widgets", widgetsRoutes(db));
 app.use("/home", homeRoutes(db));
-app.use("/drink", drinkRoutes(db));
+app.use("/api/drink", drinkRoutes(db));
 app.use("/contact", contactRoutes(db));
 app.use("/cart", cartRoutes(db));
 app.use("/menu", orderRoutes(db));
@@ -65,6 +65,13 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/cart", (req, res) => {
+  res.render("cart");
+});
+
+
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
