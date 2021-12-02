@@ -37,7 +37,23 @@
 
 <body>
   <section class="menu"></section>
-  <section class="menu-container" id="menu"></section>
+  <% for (obj of results){%>
+    <article class="item-container">
+      <div class="dish-pic"> <img alt="picture of dish" src=<%= obj.photo_url %> ></div>
+      <section class="component-container">
+        <h3 class="title"><%= obj.name %></h3>
+        <p> <%= obj.description %> </p>
+
+        <button type="button"
+          class="btn btn-default btn-sm bg-to-red">
+          <span class="glyphicon
+              glyphicon-shopping-cart">
+          </span>
+          <b> Add to Cart </b>
+        </button>
+      </section>
+    </article>
+  <%}%>
   <section class="footer-container"></section>
 </body>
 
