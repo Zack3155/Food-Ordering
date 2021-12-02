@@ -56,13 +56,13 @@ const createMenuItem = (menuObj) => {
   return (`
     <article class="item-container">
       <div class="dish-pic"> <img alt="picture of dish" src=${menuObj.image}> </div>
-      <section class="component-container">
-        <h3 class="title"> ${menuObj.title} </h3>
-        <p> ${menuObj.desc} </p>
-
-        <button type="button"
+      <section class="component-container"> 
+        <h3 class="title"> ${menuObj.title} </h3> 
+        <p> ${menuObj.desc} </p> 
+        
+        <button type="button" 
           class="btn btn-default btn-sm bg-to-red">
-          <span class="glyphicon
+          <span class="glyphicon 
               glyphicon-shopping-cart">
           </span>
           <b> Add to Cart </b>
@@ -103,7 +103,7 @@ const footer = () => {
                 <p class="copyright">Fresh © 2021</p>
              </div>
         </footer>
-    </div>
+    </div> 
     `);
 
 
@@ -113,7 +113,54 @@ const footer = () => {
 };
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////
+// Client Side Logic Implementation
 
+// Dishes example
+const dishes = [{ a: 1 }, { b: 2 }, { c: 3 }, { d: 4 }, { e: 5 }, { f: 6 }, { g: 7 }, { h: 8 }, { i: 9 }];
+
+// Remove dish from Dishes given by its name
+// Return modified Dishes
+const removeDish = function(dish_name, dishes) {
+  return dishes.filter(itm => !itm[dish_name]);
+};
+
+const setDishQuantity = function(dish_name, quantity, dishes) {
+  for (const itm of dishes) {
+    if (itm[dish_name])
+      itm[dish_name] = quantity;
+  }
+  return dishes;
+};
+
+
+
+
+
+  <div class="dish-container">
+        <header>
+          <p class="name">${name}</p>
+          <img src="${pic_url}">
+        </header>
+        <div class="content">
+          <div class="remove"><button><i class="far fa-trash-alt"></i></button></div>
+          <article>
+            <p>${intro}</p>
+          </article>
+          <footer>
+            <p>Please Edit the Quantity</p>
+            <div class="quantity">
+              <button class="minus"><i class="fas fa-angle-double-left"></i></button>
+              <div class="quantity-input"><output>${quantity}</output></div>
+              <button class="add"><i class="fas fa-angle-double-right"></i></button>
+            </div>
+          </footer>
+        </div>
+      </div>
+  `);
+};
+
+// Dynamically show cart content according to Dishes array
 
 
 /*
@@ -131,6 +178,28 @@ const renderHomePage = (db) => {
     $('.menu-container').append(createMenuItem(dish));
   }
 };
+
+const db = [{
+  image:"../images/pexels-dana.png", desc: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Beef"
+},
+{
+  image:"../images/pexels-harry.jpeg", desc: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Super shrimp"
+},
+{
+  image:"../images/pexels-josh.png", desc: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Fresh's special pasta"
+},
+];
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+// eslint-disable-next-line no-undef
+$(document).ready(function() {
+  
+  /*
+  render dishes from the dummy db
+  to the home page. All elements on the homepage are also rendered here */
+  renderHomePage(db);
 
 const db = [{
   image: "../images/pexels-dana.png", desc: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Beef"
@@ -151,12 +220,17 @@ const db = [{
 
 
   // Remove Button
+<<<<<<< HEAD
   $(".remove button").click(function () {
+=======
+  $(".remove button").click(function(event) {
+    event.preventDefault();
+>>>>>>> client-Alex
     // Remove dish from Dishes array
     //removeDish(dish_name, dishes);
 
     // Remove the current dish from cart page
-    const dish = $(this).closest(".dish-container")
+    const dish = $(this).closest(".dish-container");
 
     // update items count on the cart
     let $ordersLeft = $('.order-counter').text();
@@ -167,9 +241,15 @@ const db = [{
   });
 
   // Add Button
+<<<<<<< HEAD
   $(".add").click(function () {
     const container = $(this).closest(".dish-container");
     const output = container.find('output');
+=======
+  $(".add").click(function(event) {
+    event.preventDefault();
+    const output = $(this).closest(".dish-container").find('output');
+>>>>>>> client-Alex
     const MAX = 9;
     let quantity = Number(output.text());
     if (quantity < MAX) {
@@ -190,9 +270,15 @@ const db = [{
   });
 
   // Minus Button
+<<<<<<< HEAD
   $(".minus").click(function () {
     const container = $(this).closest(".dish-container");
     const output = container.find('output');
+=======
+  $(".minus").click(function(event) {
+    event.preventDefault();
+    const output = $(this).closest(".dish-container").find('output');
+>>>>>>> client-Alex
     const Min = 1;
     let quantity = Number(output.text());
     if (quantity > Min) {
@@ -216,7 +302,12 @@ const db = [{
   });
 
   // Checkout Button
+<<<<<<< HEAD
   $(".checkout button").click(function () {
+=======
+  $(".checkout button").click(function(event) {
+    event.preventDefault();
+>>>>>>> client-Alex
     window.location.href = "/checkout";
   });
   ///////////////////////////////////////////////////////////////////////////////////////////////
