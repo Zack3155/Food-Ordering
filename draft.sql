@@ -1,5 +1,5 @@
 SELECT
-  price
+  *
 FROM
   dishes
 WHERE

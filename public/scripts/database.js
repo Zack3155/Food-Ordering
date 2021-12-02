@@ -7,7 +7,7 @@ db.connect();
 // Server Side Logic Implementation
 
 // Given dish name, return the price for this dish
-const getPrice = function (dish_name) {
+const getPriceWithName = function (dish_name) {
   const values = [dish_name];
   const queryString = (
     `SELECT
@@ -15,9 +15,34 @@ const getPrice = function (dish_name) {
 FROM
   dishes
 WHERE
-  name = 'coca cola';`
+  name = $1;`
   );
-}
+
+  return pool.query(queryString, values)
+    .then((result) => result.rows[0])
+    .catch((err) => console.log(err.message));
+};
+
+const getDishInfoWithName = function (dish_name) {
+  const values = [dish_name];
+  const queryString = (
+    `SELECT
+  *
+FROM
+  dishes
+WHERE
+  name = $1;`
+  );
+
+  return pool.query(queryString, values)
+    .then((result) => result.rows[0])
+    .catch((err) => console.log(err.message));
+};
+
+
+
+
+module.exports = { getPriceWithName, getDishInfoWithName };
 
 
 
