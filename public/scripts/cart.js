@@ -1,4 +1,5 @@
-//const { getPriceWithName } = require('./database.js');
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // Client Side Logic Implementation
@@ -28,9 +29,7 @@ const setDishQuantity = function (dish_name, quantity, dishes) {
   }
 };
 
-const getDishPrice = function (dish_name) {
-  return getPriceWithName(dish_name);
-};
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // Cart Page Logic Implementation

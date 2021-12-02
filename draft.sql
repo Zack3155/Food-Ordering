@@ -3,4 +3,4 @@ SELECT
 FROM
   dishes
 WHERE
-  name = 'coca cola';
+  name LIKE '%coca%';
