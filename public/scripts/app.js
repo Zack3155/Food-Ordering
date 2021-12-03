@@ -341,8 +341,7 @@ $(document).ready(function () {
   });
 
   // Checkout Button
-  $(".checkout button").on("click", function (event) {
-    event.preventDefault();
+  $(".checkout button").on("click", function () {
     window.location.href = "/checkout";
   });
 

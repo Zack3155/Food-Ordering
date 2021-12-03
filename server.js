@@ -47,7 +47,7 @@ const checkoutRoutes = require("./routes/checkout");
 // app.use("/api/widgets", widgetsRoutes(db));
 app.use("/home", homeRoutes(db));
 app.use("/contact", contactRoutes(db));
-app.use("/menu", menuRoutes(db));
+app.use("/menu", menuRouttes(db));
 app.use("/checkout", checkoutRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
