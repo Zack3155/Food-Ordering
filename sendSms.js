@@ -1,22 +1,28 @@
-require('dotenv').load();
 
+require('dotenv').config();
 
-const accountSid = process.env.ACCOUNT_SID;
-const authToken = process.env.AUTH_TOKEN;
-const customerNumber = process.env.BUYER_NUMBER;
-const restaurantNumber = process.env.REST_NUMBER;
-
-
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const restaurant = process.env.REST_NUMBER;
+const 
 const client = require('twilio')(accountSid, authToken);
 
-const sendSms = (messageToSend) => {
-  client.messages
-    .create({
-      body: messageToSend,
-      from: restaurantNumber,
-      to: customerNumber
-    })
-    .then(message => console.log(message.sid));
-};
+client.messages.create({
+  body: "your order will be ready in 30",
+  from: '+12292796560',
+  to: '+13433332320'
+})
+  .then(message => console.log(message.sid));
 
-module.exports = { sendSms };
+
+// const sendTextMessage = (messageToSend) => {
+//   client.messages.create({
+//     body: "your order will be ready in 30",
+//     from: '+12292796560',
+//     to: '+13433332320'
+//   })
+//     .then(message => console.log(message.sid));
+// };
+
+
+// module.exports = { sendTextMessage };
