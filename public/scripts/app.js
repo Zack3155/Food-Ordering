@@ -135,6 +135,11 @@ const setDishQuantity = function (dish_name, quantity, dishes) {
   }
 };
 
+// Get specific dish quantity by dish's name
+// const setDishQuantity = function (dish_name, quantity, dishes) {
+// };
+
+
 // Count the total number of items in the cart
 const countCartItems = function (dishes) {
   let result = 0;
@@ -275,6 +280,8 @@ $(document).ready(function () {
    * Cart Page
    * Render Cart Page
    */
+
+
   renderCart(JSON.parse(localStorage.getItem("cartItems")));
   // Show a number on the cart icon
   quantity = countCartItems(dishes);

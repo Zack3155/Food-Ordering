@@ -97,7 +97,7 @@ VALUES
     'Water',
     'drinks',
     2,
-    'images/db_img/water.jpeg',
+    'images/db_img/water.png',
     2,
     'Dasani water',
     TRUE
