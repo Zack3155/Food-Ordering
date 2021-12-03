@@ -221,7 +221,7 @@ const resetCart = function () {
  * DOM Ready
  * Initialize all fields
  */
-let dishes = [];
+let dishes = []; // dish-quantity pairs
 let cart = [];
 let total = 0;
 let quantity = 0;

@@ -170,6 +170,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: inline-block;
+  text-align: center;
 }
 @media only screen and (max-width: 650px) {
   .item-container {
