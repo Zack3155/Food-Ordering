@@ -22,6 +22,7 @@
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
+
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
@@ -39,7 +40,7 @@
   <section class="menu"></section>
   <% for (obj of results){%>
     <article class="item-container">
-      <div class="dish-pic"> <img alt="picture of dish" src=<%=obj.photo_url %> ></div>
+      <div class="dish-pic"> <img alt="picture of dish" src=<%=obj.photo_url%>></div>
       <section class="component-container">
         <h3 class="title">
           <%= obj.name %>
@@ -47,11 +48,13 @@
         <p>
           <%= obj.description %>
         </p>
-
+        <h4>$<%= obj.price %>
+        </h4>
         <button type="button" class="btn btn-default btn-sm bg-to-red">
           <span class="glyphicon
               glyphicon-shopping-cart">
           </span>
+
           <b> Add to Cart </b>
         </button>
       </section>

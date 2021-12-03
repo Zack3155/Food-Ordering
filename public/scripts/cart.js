@@ -70,6 +70,9 @@ const createCartItem = function (dish, quantity) {
   `);
 };
 
+
+
+
 // Dynamically show cart content according to Dishes array
 const renderCart = function (dishes) {
   const cartContainer = $('.dishes');
@@ -80,7 +83,7 @@ const renderCart = function (dishes) {
   }
 }
 
-// Load the whole cart for displaying cart content
+//Load the whole cart for displaying cart content
 const loadCart = function () {
   $.ajax(
     {
@@ -88,10 +91,6 @@ const loadCart = function () {
       method: 'PUT',
       dataType: 'json',
       success: (data) => {
-        // for (const itm of data) {
-        //   const name = itm.name;
-        //   addDish(name, 1, dishes);
-        // }
         renderCart(data); // call for render cart content
       },
       error: (err) => {
@@ -100,17 +99,38 @@ const loadCart = function () {
     });
 };
 
+// Another version of loadCart()
+// It uses a dishes array and search from db to get dish info
+// const loadCart = function () {
+//   for (const itm of dishes) {
+//     const name = Object.keys(itm)[0];
+//     console.log(`/cart/add/:${name}`);
+//     $.ajax(
+//       {
+//         url: `/cart/add/:${name}`,
+//         method: 'GET',
+//         dataType: 'json',
+//         success: (data) => {
+//           console.log(data);
+//         },
+//         error: (err) => {
+//           console.log(`there was an error: ${err}`);
+//         }
+//       });
+//   }
+// };
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // DOM Logic Implementation
 let dishes = [];
+// let dishes = [{ 'Cookies': 2 }, { 'Cheesecake': 1 }, { 'Meat Pizza': 1 }, { 'Cheeseburger': 1 }, { 'Ginger ale': 1 }];
 let total = 0;
 let quantity = 0;
 loadCart();
 
-
 $(document).ready(function () {
   // Code Test Section
-  console.log(dishes);
+  //console.log(dishes);
 
   // Show a number on the cart icon
   quantity = countCartItems(dishes);

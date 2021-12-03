@@ -33,5 +33,20 @@ module.exports = (db) => {
     //res.render("cart");
   });
 
+  router.get("/add/:name", (req, res) => {
+
+    console.log(req.body);
+    const values = [req.params.name];
+    const queryString = (`SELECT * FROM dishes WHERE name = $1;`);
+    db.query(queryString, values)
+      .then(data => {
+        res.json(data.rows[0]);
+      })
+      .catch(err => {
+        res.status(500).json({ error: err.message });
+      });
+    //res.render("cart");
+  });
+
   return router;
 };

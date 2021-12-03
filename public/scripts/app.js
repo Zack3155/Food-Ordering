@@ -53,13 +53,14 @@ const blueBannerContent = () => {
 
 // create menu item with its description
 const createMenuItem = (menuObj) => {
-  
+
   return (`
     <article class="item-container">
       <div class="dish-pic"> <img alt="picture of dish" src=${menuObj.photo_url}> </div>
       <section class="component-container">
-        <h3 class="title"> ${menuObj.name} </h3>
-        <p> ${menuObj.description} </p>
+        <h3 class="title"> ${menuObj.title} </h3>
+        <p> ${menuObj.desc} </p>
+        <h4>$${menuObj.price}</h4>
 
         <button type="button"
           class="btn btn-default btn-sm bg-to-red">
@@ -114,48 +115,34 @@ const footer = () => {
 };
 
 
+// eslint-disable-next-line no-undef
+$(document).ready(function () {
 
 
-
-/*
-  DUMMY MENU OBJECTS
-*/
-
-const renderHomePage = (db) => {
   $('.menu').append(createNavBar);
   $('.search-container').append(searchButton);
   $('.shape-decoration').append(createDecoration);
   $('.blue-container').append(blueBannerContent);
   $('.footer-container').append(footer);
-  for (let dish of db) {
-    // eslint-disable-next-line no-undef
-    $('.menu-container').append(createMenuItem(dish));
-  }
-};
-
-const db = [{
-  photo_url: "../images/pexels-dana.png", description: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Beef"
-},
-{
-  photo_url: "../images/pexels-harry.jpeg", description: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Super shrimp"
-},
-{
-  photo_url: "../images/pexels-josh.png", description: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Fresh's special pasta"
-},
-];
 
 
-////////////////////////////////////////////////////////////////////////////////////////////
+  // Add to Cart button
+  $("#menu button").click(function (event) {
+    event.preventDefault();
+    const container = $(this).closest('.item-container');
+    const dish_name = container.find('h3').text();
 
-// eslint-disable-next-line no-undef
-$(document).ready(function() {
-  
-  
-  /*
-  render dishes from the dummy db
-  to the home page. All elements on the homepage are also rendered here */
-  renderHomePage(db);
-  
+    // increase count of items in cart
+    let $ordersAdded = $('.order-counter').text();
+    let $addOrder = Number($ordersAdded) + 1;
+    $('.order-counter').text($addOrder);
+    console.log(dish_name);
+
+    // update cart item
+    const name = dish_name;
+
+
+  });
 
 
 });
