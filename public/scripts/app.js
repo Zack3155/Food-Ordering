@@ -60,6 +60,7 @@ const createMenuItem = (menuObj) => {
       <section class="component-container">
         <h3 class="title"> ${menuObj.title} </h3>
         <p> ${menuObj.desc} </p>
+        <h4>$${menuObj.price}</h4>
 
         <button type="button"
           class="btn btn-default btn-sm bg-to-red">
@@ -130,13 +131,16 @@ const renderHomePage = (db) => {
 
 
 const db = [{
-  photo_url: "../images/pexels-dana.png", desc: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Beef"
+  photo_url: "../images/pexels-dana.png", desc: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Beef",
+  price: 19
 },
 {
-  photo_url: "../images/pexels-harry.jpeg", desc: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Super shrimp"
+  photo_url: "../images/pexels-harry.jpeg", desc: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Super shrimp",
+  price: 24.25
 },
 {
-  photo_url: "../images/pexels-josh.png", desc: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Fresh's special pasta"
+  photo_url: "../images/pexels-josh.png", desc: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Fresh's special pasta",
+  price: 18.50
 },
 ];
 
