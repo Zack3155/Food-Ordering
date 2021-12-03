@@ -3,19 +3,19 @@
 
 // Remove dish from Dishes given by its name
 // Return a COPY of modified Dishes
-const removeDish = function(dish_name, dishes) {
+const removeDish = function (dish_name, dishes) {
   return dishes.filter(itm => !itm[dish_name]);
 };
 
 // Add dish to Dishes given by dish's name & dish's quantity
-const addDish = function(dish_name, quantity, dishes) {
+const addDish = function (dish_name, quantity, dishes) {
   let obj = {};
-  obj[dish_name] = quantity;
+  obj[dish_name] = quantity
   dishes.push(obj);
 };
 
 // Modifies dishes given by dish's name & dish's quantity
-const setDishQuantity = function(dish_name, quantity, dishes) {
+const setDishQuantity = function (dish_name, quantity, dishes) {
   for (const itm of dishes) {
     if (itm[dish_name]) {
       itm[dish_name] = quantity;
@@ -34,8 +34,16 @@ const countCartItems = function (dishes) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // Cart Page Logic Implementation
-// Create single cart item
-const createCartItem = function(name, pic_url, intro, quantity) {
+
+// Create single cart item by given dish object and its quantity
+// Also push the dish item to dishes
+const createCartItem = function (dish, quantity) {
+  const name = dish.name;
+  const photo_url = dish.photo_url;
+  const intro = dish.description;
+  const price = dish.price;
+  addDish(name, quantity, dishes); // add dish-quantity pair to Dishes array
+  total += price; // update the price
   return (`
   <div class="dish-container">
         <header>
@@ -63,17 +71,35 @@ const createCartItem = function(name, pic_url, intro, quantity) {
 };
 
 // Dynamically show cart content according to Dishes array
-const renderCart = function(dishes) {
-  const name = 'Photosimysia';
-  const pic_url = 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/88f787f4-40c9-4084-92f1-5df6dc94fb72-french-onion-soup.jpg';
-  const intro = `Very few dishes are as comforting as French onion soup – a blend of mellow, slowly cooked, caramelised onions in a broth laced with white wine and cognac. It's thought that a version of the soup has existed since at least Roman times, but the modern version originated in 18th-century Paris. The soup is served in a ramekin, topped with a slice of baguette and cheese that's then melted under a grill.`;
-  const quantity = '1';
+const renderCart = function (dishes) {
   const cartContainer = $('.dishes');
-  const $itm = createCartItem(name, pic_url, intro, quantity);
-  cartContainer.append($itm);
-  cartContainer.append($itm);
-  cartContainer.append($itm);
+  cartContainer.empty();
+  for (const itm of dishes) {
+    const $itm = createCartItem(itm, 1);
+    cartContainer.append($itm);
+  }
+}
+
+// Load the whole cart for displaying cart content
+const loadCart = function () {
+  $.ajax(
+    {
+      url: '/cart/list',
+      method: 'PUT',
+      dataType: 'json',
+      success: (data) => {
+        // for (const itm of data) {
+        //   const name = itm.name;
+        //   addDish(name, 1, dishes);
+        // }
+        renderCart(data); // call for render cart content
+      },
+      error: (err) => {
+        alert(`there was an error: ${err}`);
+      }
+    });
 };
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // DOM Logic Implementation
 let dishes = [];
@@ -82,31 +108,19 @@ let quantity = 0;
 loadCart();
 
 
-$(document).ready(function() {
+$(document).ready(function () {
   // Code Test Section
-  //console.log(dishes);
+  console.log(dishes);
 
-  // eslint-disable-next-line no-undef
-  $.ajax(
-    {
-      url: '/cart',
-      method: 'get',
-      dataType: 'json',
-      success: (data) => {
-        console.log("result is: ", data[0]);
-      },
-      error: (err) => {
-        // eslint-disable-next-line no-undef
-        alert(`there was an error: ${err}`);
-      }
-    }
-  );
-  ///////////////////////////////////////////////////////////////////////////////////////////////
-  // Cart Page Implementation
-  renderCart(dishes);
+  // Show a number on the cart icon
+  quantity = countCartItems(dishes);
+  $('.order-counter').text(quantity);
+  // Show the total price
+  $('.total').text(total);
+
 
   // Remove Button
-  $(".remove button").click(function(event) {
+  $(".remove button").on("click", function (event) {
     event.preventDefault();
 
     // Remove the current dish from cart page
@@ -132,7 +146,7 @@ $(document).ready(function() {
   });
 
   // Add Button
-  $(".add").click(function(event) {
+  $(".add").on("click", function (event) {
     event.preventDefault();
     const container = $(this).closest(".dish-container");
     const output = container.find('output');
@@ -158,7 +172,7 @@ $(document).ready(function() {
   });
 
   // Minus Button
-  $(".minus").click(function(event) {
+  $(".minus").on("click", function (event) {
     event.preventDefault();
     const container = $(this).closest(".dish-container");
     const output = container.find('output');
@@ -183,10 +197,9 @@ $(document).ready(function() {
   });
 
   // Checkout Button
-  $(".checkout button").click(function(event) {
+  $(".checkout button").on("click", function (event) {
     event.preventDefault();
     window.location.href = "/checkout";
   });
 });
 
-modules.exports = { dishes, total };

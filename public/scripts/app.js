@@ -108,7 +108,12 @@ const footer = () => {
     </div>
     `);
 
+
+
+
+
 };
+
 
 
 
@@ -129,7 +134,6 @@ const renderHomePage = (db) => {
   }
 };
 
-
 const db = [{
   photo_url: "../images/pexels-dana.png", desc: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Beef",
   price: 19
@@ -143,6 +147,9 @@ const db = [{
   price: 18.50
 },
 ];
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
 
 // eslint-disable-next-line no-undef
 $(document).ready(function() {

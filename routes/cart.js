@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const getDishInfoByName = function(dish_name) {
-  // eslint-disable-next-line camelcase
+const getDishInfoByName = function (dish_name) {
   const values = [dish_name];
   const queryString = (`
 SELECT
@@ -12,7 +11,6 @@ FROM
 WHERE
   name = $1;
   `);
-  // eslint-disable-next-line no-undef
   return pool.query(queryString, values)
     .then((result) => result.rows[0])
     .catch((err) => console.log(err.message));
@@ -23,12 +21,11 @@ module.exports = (db) => {
 
 
 
-  router.get("/", (req, res) => {
+  router.put("/list", (req, res) => {
     const queryString = (`SELECT * FROM dishes;`);
     db.query(queryString)
       .then(data => {
-        const result = data.rows;
-        res.json({ result });
+        res.json(data.rows);
       })
       .catch(err => {
         res.status(500).json({ error: err.message });
