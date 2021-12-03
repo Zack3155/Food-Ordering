@@ -154,6 +154,15 @@ const findDish = function (name, dishes) {
   return false;
 };
 
+// remove dish from cart by given its name
+const removeDishFromCart = function (dish_name, cart) {
+  return cart.filter(itm => {
+    if (Object.values(itm)[0] !== dish_name) {
+      return true;
+    }
+  });
+};
+
 
 /**
  * Cart Page Logic Implementation
@@ -258,7 +267,6 @@ $(document).ready(function () {
 
   // when menu got clicked
   $('.menuClick').on("click", function () {
-    console.log(cart);
     localStorage.setItem('cartItems', JSON.stringify(cart));
   });
 
@@ -293,6 +301,9 @@ $(document).ready(function () {
     $('.total').text(total);
     // Remove this dish from cart
     container.remove();
+    cart = removeDishFromCart(name, cart);
+
+    console.log(cart);
   });
 
   // Add Button
@@ -315,7 +326,6 @@ $(document).ready(function () {
       total += Number(container.find('.price').text());
       $('.total').text(total);
     }
-
   });
 
   // Minus Button
@@ -342,6 +352,7 @@ $(document).ready(function () {
 
   // Checkout Button
   $(".checkout button").on("click", function () {
+    localStorage.setItem('cartItems', JSON.stringify(cart));
     window.location.href = "/checkout";
   });
 
