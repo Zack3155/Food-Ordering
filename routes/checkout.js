@@ -1,4 +1,6 @@
 const express = require('express');
+const sms = require('sendSms.js');
+console.log("sms: ", sms);
 const router = express.Router();
 
 module.exports = (db) => {
