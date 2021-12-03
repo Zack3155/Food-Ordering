@@ -109,11 +109,12 @@ const footer = () => {
     `);
 };
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-// Client Side Logic Implementation
 
-// Remove dish from Dishes given by its name
-// Return a COPY of modified Dishes
+/**
+ * Client Side Logic Implementation
+ * Remove dish from Dishes given by its name
+ * Return a COPY of modified Dishes
+ */
 const removeDish = function (dish_name, dishes) {
   return dishes.filter(itm => !itm[dish_name]);
 };
@@ -152,11 +153,13 @@ const findDish = function (name, dishes) {
   }
   return false;
 };
-///////////////////////////////////////////////////////////////////////////////////////////////
-// Cart Page Logic Implementation
 
-// Create single cart item by given dish object and its quantity
-// Also push the dish item to dishes
+
+/**
+ * Cart Page Logic Implementation
+ * Create single cart item by given dish object and its quantity
+ * Also push the dish item to dishes
+ */
 const createCartItem = function (dish, quantity) {
   const name = dish.name;
   const photo_url = dish.photo_url;
@@ -212,29 +215,23 @@ const resetCart = function () {
   $('.order-counter').text(0);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-
-// DOM Logic Implementation
+/**
+ * DOM Logic Implementation
+ * DOM Ready
+ * Initialize all fields
+ */
 let dishes = [];
 let cart = [];
 let total = 0;
 let quantity = 0;
 
-
-// eslint-disable-next-line no-undef
-$(document).ready(function () { // DOM Ready
-
-
+$(document).ready(function () {
   $('.menu').append(createNavBar);
   $('.search-container').append(searchButton);
   $('.shape-decoration').append(createDecoration);
   $('.blue-container').append(blueBannerContent);
   $('.footer-container').append(footer);
-
 
   // Add to Cart button
   $(".item-container button").on("click", function (event) {
@@ -250,7 +247,6 @@ $(document).ready(function () { // DOM Ready
       cart.push(dish);
       addDish(name, 1, dishes); // add dish to dish-quantity pairs array
     }
-
     // increase count of items in cart
     $('.order-counter').text(cart.length);
   });
@@ -266,9 +262,11 @@ $(document).ready(function () { // DOM Ready
     localStorage.setItem('cartItems', JSON.stringify(cart));
   });
 
-  ///////////////////////////////////////////////////////////////////////////////////////////////
-  // Cart Page
-  // Render Cart Page
+
+  /**
+   * Cart Page
+   * Render Cart Page
+   */
   renderCart(JSON.parse(localStorage.getItem("cartItems")));
   // Show a number on the cart icon
   quantity = countCartItems(dishes);
@@ -276,29 +274,23 @@ $(document).ready(function () { // DOM Ready
   // Show the total price
   $('.total').text(total);
 
-
   // Remove Button
   $(".remove button").on("click", function (event) {
     event.preventDefault();
-
     // Remove the current dish from cart page
     const container = $(this).closest(".dish-container");
-
     // Remove dish from Dishes array
     const name = container.find('.name').text();
     dishes = removeDish(name, dishes);
-
     // update items count on the cart
     const number = Number(container.find('output').text());
     let $curr = Number($('.order-counter').text()) - number;
     $('.order-counter').text($curr);
     setDishQuantity(name, quantity - number, dishes);
-
     // upate total price on the cart
     const price = number * Number(container.find('.price').text());
     total -= price;
     $('.total').text(total);
-
     // Remove this dish from cart
     container.remove();
   });
@@ -315,13 +307,10 @@ $(document).ready(function () { // DOM Ready
       // update quantity data
       const name = container.find('.name').text();
       setDishQuantity(name, quantity, dishes);
-      //console.log(dishes);
-
       // increase count of items in cart
       let $ordersAdded = $('.order-counter').text();
       let $addOrder = Number($ordersAdded) + 1;
       $('.order-counter').text($addOrder);
-
       // update total price
       total += Number(container.find('.price').text());
       $('.total').text(total);
@@ -341,13 +330,10 @@ $(document).ready(function () { // DOM Ready
       // update quantity data
       const name = container.find('.name').text();
       setDishQuantity(name, quantity, dishes);
-      //console.log(dishes);
-
       // decrement count of items in cart
       let $ordersAdded = $('.order-counter').text();
       $ordersAdded = Number($ordersAdded) - 1;
       $('.order-counter').text($ordersAdded);
-
       // update total price
       total -= Number(container.find('.price').text());
       $('.total').text(total);
@@ -359,7 +345,5 @@ $(document).ready(function () { // DOM Ready
     event.preventDefault();
     window.location.href = "/checkout";
   });
-
-
 
 });
