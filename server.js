@@ -32,6 +32,7 @@ app.use(
 );
 
 app.use(express.static("public"));
+app.use('/public/images/db_img', express.static('public/images/db_img'));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
