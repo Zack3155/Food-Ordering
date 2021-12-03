@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const getDishInfoByName = function (dish_name) {
+const getDishInfoByName = function(dish_name) {
   const values = [dish_name];
   const queryString = (`
 SELECT
