@@ -9,7 +9,7 @@ const createNavBar = () => {
       </div>
       <ul class="menu-item-container">
         <li><a href="/home">Home</a></li>
-        <li><a href="/menu">Menu</a></li>
+        <li><a class="menuClick" href="/menu">Menu</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <div class="cart">
@@ -107,11 +107,6 @@ const footer = () => {
         </footer>
     </div>
     `);
-
-
-
-
-
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -148,8 +143,15 @@ const countCartItems = function (dishes) {
   return result;
 };
 
-
-
+// Return true if we can find the dish name in dishes array
+const findDish = function (name, dishes) {
+  for (const itm of dishes) {
+    if (Object.keys(itm)[0] === name) {
+      return true;
+    }
+  }
+  return false;
+};
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // Cart Page Logic Implementation
 
@@ -160,8 +162,8 @@ const createCartItem = function (dish, quantity) {
   const photo_url = dish.photo_url;
   const intro = dish.description;
   const price = dish.price;
-  addDish(name, quantity, dishes); // add dish-quantity pair to Dishes array
-  total += price; // update the price
+  addDish(name, 1, dishes); // add dish to dish-quantity pairs array
+  total += price; // update the total price
   console.log(dishes);
   return (`
   <div class="dish-container">
@@ -189,9 +191,6 @@ const createCartItem = function (dish, quantity) {
   `);
 };
 
-
-
-
 // Dynamically show cart content according to Dishes array
 const renderCart = function (dishes) {
   const cartContainer = $('.dishes');
@@ -201,51 +200,17 @@ const renderCart = function (dishes) {
     cartContainer.append($itm);
   }
 }
-
-//Load the whole cart for displaying cart content
-const loadCart = function () {
-  $.ajax(
-    {
-      url: '/cart/list',
-      method: 'PUT',
-      dataType: 'json',
-      success: (data) => {
-        renderCart(data); // call for render cart content
-      },
-      error: (err) => {
-        alert(`there was an error: ${err}`);
-      }
-    });
-};
-
-// Another version of loadCart()
-// It uses a dishes array and search from db to get dish info
-// const loadCart = function () {
-//   for (const itm of dishes) {
-//     const name = Object.keys(itm)[0];
-//     console.log(`/cart/add/:${name}`);
-//     $.ajax(
-//       {
-//         url: `/cart/add/:${name}`,
-//         method: 'GET',
-//         dataType: 'json',
-//         success: (data) => {
-//           console.log(data);
-//         },
-//         error: (err) => {
-//           console.log(`there was an error: ${err}`);
-//         }
-//       });
-//   }
-// };
-
 ///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 // DOM Logic Implementation
 let dishes = [];
 let cart = [];
 let total = 0;
 let quantity = 0;
-///////////////////////////////////////////////////////////////////////////////////////////////
 
 
 // eslint-disable-next-line no-undef
@@ -260,7 +225,7 @@ $(document).ready(function () { // DOM Ready
 
 
   // Add to Cart button
-  $(".item-container button").click(function (event) {
+  $(".item-container button").on("click", function (event) {
     event.preventDefault();
     const container = $(this).closest('.item-container');
     const name = container.find('.title').text().trim();
@@ -268,28 +233,35 @@ $(document).ready(function () { // DOM Ready
     const price = Number(container.find('.price').text().trim());
     const photo_url = container.find('img').attr('src');
     const dish = { 'name': name, 'description': description, 'price': price, 'photo_url': photo_url };
-    // update cart item
-    cart.push(dish);
+    // update cart item and dishes array
+    if (!findDish(name, dishes)) { // if dish-quantity pairs dont contain this dish, then update
+      cart.push(dish);
+      addDish(name, 1, dishes); // add dish to dish-quantity pairs array
+    }
 
     // increase count of items in cart
     $('.order-counter').text(cart.length);
   });
 
-  $('.cartClick').click(function () {
+  // when click cart icon
+  $('.cartClick').on("click", function () {
     localStorage.setItem('cartItems', JSON.stringify(cart));
   });
 
-
+  // when menu got clicked
+  $('.menuClick').on("click", function () {
+    localStorage.setItem('cartItems', JSON.stringify(cart));
+  });
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
   // Cart Page
+  // Render Cart Page
+  renderCart(JSON.parse(localStorage.getItem("cartItems")));
   // Show a number on the cart icon
   quantity = countCartItems(dishes);
   $('.order-counter').text(quantity);
   // Show the total price
   $('.total').text(total);
-  // Render Cart Page
-  renderCart(JSON.parse(localStorage.getItem("cartItems")));
 
 
   // Remove Button
