@@ -216,7 +216,7 @@ body {
 
 .component-container {
 	font-family: $pp-font;
-	@include displayFlex(flex, center, center);
+	@include displayFlex(flex, space-between, center);
 	flex-direction: column;
 	padding: 2em;
 

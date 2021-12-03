@@ -180,7 +180,7 @@ body {
 .component-container {
   font-family: "Roboto", sans-serif;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   padding: 2em;
