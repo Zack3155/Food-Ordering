@@ -99,3 +99,21 @@ footer .quantity .quantity-input {
 .order button:hover {
 	color: black;
 }
+
+.content {
+	.remove {
+		display: none;
+	}
+	article {
+		display: flex;
+		justify-self: center;
+	}
+	footer {
+		p {
+			display: none;
+		}
+		button {
+			display: none;
+		}
+	}
+}
