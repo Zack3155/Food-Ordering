@@ -164,7 +164,7 @@ const createCartItem = function (dish, quantity) {
   const price = dish.price;
   addDish(name, 1, dishes); // add dish to dish-quantity pairs array
   total += price; // update the total price
-  console.log(dishes);
+  cart.push(dish); // add this item back to cart array
   return (`
   <div class="dish-container">
         <header>
@@ -194,12 +194,24 @@ const createCartItem = function (dish, quantity) {
 // Dynamically show cart content according to Dishes array
 const renderCart = function (dishes) {
   const cartContainer = $('.dishes');
+  // clear cart and its container
+  cart = [];
   cartContainer.empty();
   for (const itm of dishes) {
     const $itm = createCartItem(itm, 1);
     cartContainer.append($itm);
   }
 }
+
+// Reset the entire cart
+const resetCart = function () {
+  dishes = [];
+  cart = [];
+  total = 0;
+  quantity = 0;
+  $('.order-counter').text(0);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -250,6 +262,7 @@ $(document).ready(function () { // DOM Ready
 
   // when menu got clicked
   $('.menuClick').on("click", function () {
+    console.log(cart);
     localStorage.setItem('cartItems', JSON.stringify(cart));
   });
 
