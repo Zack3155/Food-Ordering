@@ -35,6 +35,7 @@ app.use(express.static("public"));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
+const homeRoutes = require("./routes/home");
 const contactRoutes = require("./routes/contact");
 const menuRoutes = require("./routes/menu");
 const checkoutRoutes = require("./routes/checkout");
@@ -44,6 +45,7 @@ const checkoutRoutes = require("./routes/checkout");
 
 // app.use("/api/users", usersRoutes(db));
 // app.use("/api/widgets", widgetsRoutes(db));
+app.use("/home", homeRoutes(db));
 app.use("/contact", contactRoutes(db));
 app.use("/menu", menuRoutes(db));
 app.use("/checkout", checkoutRoutes(db));
@@ -60,8 +62,6 @@ app.get("/", (req, res) => {
 app.get("/cart", (req, res) => {
   res.render("cart");
 });
-
-
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
