@@ -3,8 +3,10 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-  
-    res.render("menu");
+    db.query("select * from dishes;")
+      .then(result => {
+        res.render("menu", { dishes: result.rows });
+      })
   });
   return router;
 };

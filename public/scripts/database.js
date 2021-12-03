@@ -116,7 +116,3 @@ const addDish_orders = function (dish_order) {
 
 
 module.exports = { getPriceWithName, getDishInfoWithName };
-
-
-
-

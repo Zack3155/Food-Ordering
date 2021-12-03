@@ -37,7 +37,17 @@
 
 <body>
   <section class="menu"></section>
-  <section class="menu-container" id="menu"></section>
+  <div>
+    <% for(let dish of dishes) { %>
+      <div>
+        <img src="<%= dish.photo_url %>" />
+        <%= dish.name %>
+          <%= dish.description %>
+            <%= dish.price %>
+      </div>
+      <% } %>
+  </div>
+
   <section class="footer-container"></section>
 </body>
 

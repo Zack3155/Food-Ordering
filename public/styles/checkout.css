@@ -1,6 +1,7 @@
 .checkout-container {
   font: 100% Nunito, sans-serif;
 }
+
 .checkout-container h2 {
   margin: 0;
   text-align: center;
@@ -22,10 +23,12 @@
   flex-direction: row;
   justify-content: center;
 }
+
 .new-container .quantity {
   display: flex;
   padding: 0.5em;
 }
+
 .new-container .quantity .quantity-input {
   justify-content: center;
 }
@@ -39,10 +42,12 @@ header {
   margin-left: 5px;
   margin-right: 10px;
 }
+
 header img {
   width: 100px;
   height: 75px;
 }
+
 header .name {
   display: flex;
   justify-content: center;
@@ -54,6 +59,7 @@ header .name {
 article {
   margin-top: 10px;
 }
+
 article p {
   margin-top: 10px;
   margin-bottom: 5px;
@@ -68,12 +74,14 @@ footer p {
   font-weight: bold;
   color: #608af8;
 }
+
 footer .quantity {
   padding-left: 10px;
   display: flex;
   text-align: flex-end;
   margin-top: 60px;
 }
+
 footer .quantity .quantity-input {
   width: 42px;
   height: 25px;
@@ -88,6 +96,7 @@ footer .quantity .quantity-input {
   right: 20px;
   color: #608af8;
 }
+
 .order button {
   font-size: large;
   color: white;
@@ -96,6 +105,7 @@ footer .quantity .quantity-input {
   color: lightgrey;
   border: 0;
 }
+
 .order button:hover {
   color: black;
 }

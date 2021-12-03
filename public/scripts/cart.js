@@ -88,6 +88,10 @@ const loadCart = function () {
       method: 'PUT',
       dataType: 'json',
       success: (data) => {
+        // for (const itm of data) {
+        //   const name = itm.name;
+        //   addDish(name, 1, dishes);
+        // }
         renderCart(data); // call for render cart content
       },
       error: (err) => {
@@ -106,7 +110,7 @@ loadCart();
 
 $(document).ready(function () {
   // Code Test Section
-  //console.log(dishes);
+  console.log(dishes);
 
   // Show a number on the cart icon
   quantity = countCartItems(dishes);
@@ -199,4 +203,3 @@ $(document).ready(function () {
   });
 });
 
-modules.exports = { dishes, total };
