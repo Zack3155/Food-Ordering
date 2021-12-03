@@ -110,8 +110,7 @@ const footer = () => {
 };
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-// Client Side Logic Implementation
+
 
 /*
   DUMMY MENU OBJECTS
@@ -129,9 +128,6 @@ const renderHomePage = (db) => {
   }
 };
 
-////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
 const db = [{
   photo_url: "../images/pexels-dana.png", desc: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Beef"
@@ -143,10 +139,6 @@ const db = [{
   photo_url: "../images/pexels-josh.png", desc: "Beef chicken pork bacon chuck shortloin sirloin shank shoulder, meatloaf pastrami aute turkey proident eu t-bone consequat porkbelly, officia dolore flank est spareribs leberkas andouille. Sunt meatloaf officia occaecat esse veniam flank tri-tip pork, consectetur capicola mollit nostrud velit turkey consequat in, cow sed shankle est enim chicken tongue. Aute ", title: "Fresh's special pasta"
 },
 ];
-
-
-  
-////////////////////////////////////////////////////////////////////////////////////////////
 
 // eslint-disable-next-line no-undef
 $(document).ready(function() {

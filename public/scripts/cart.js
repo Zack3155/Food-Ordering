@@ -1,11 +1,5 @@
-
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // Client Side Logic Implementation
-
-// Dishes example
-let dishes = [{ a: 1 }, { b: 2 }, { c: 3 }, { d: 4 }, { e: 5 }, { f: 6 }, { g: 7 }, { h: 8 }, { i: 9 }];
 
 // Remove dish from Dishes given by its name
 // Return a COPY of modified Dishes
@@ -29,7 +23,14 @@ const setDishQuantity = function(dish_name, quantity, dishes) {
   }
 };
 
-
+// Count the total number of items in the cart
+const countCartItems = function (dishes) {
+  let result = 0;
+  for (const itm of dishes) {
+    result += Number(Object.values(itm));
+  }
+  return result;
+};
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // Cart Page Logic Implementation
@@ -40,7 +41,8 @@ const createCartItem = function(name, pic_url, intro, quantity) {
         <header>
           <p class="name">${name}</p>
           <img
-            src="${pic_url}">
+            src="${photo_url}">
+          <p><span class="price">${price}</span> CAD Each</p>
         </header>
         <div class="content">
           <div class="remove"><button><i class="far fa-trash-alt"></i></button></div>
@@ -73,10 +75,16 @@ const renderCart = function(dishes) {
   cartContainer.append($itm);
 };
 ///////////////////////////////////////////////////////////////////////////////////////////////
+// DOM Logic Implementation
+let dishes = [];
+let total = 0;
+let quantity = 0;
+loadCart();
+
 
 $(document).ready(function() {
   // Code Test Section
-  //console.log(getDishPrice('coca cola'));
+  //console.log(dishes);
 
   // eslint-disable-next-line no-undef
   $.ajax(
@@ -100,18 +108,27 @@ $(document).ready(function() {
   // Remove Button
   $(".remove button").click(function(event) {
     event.preventDefault();
-    // Remove dish from Dishes array
-    //removeDish(dish_name, dishes);
 
     // Remove the current dish from cart page
-    const dish = $(this).closest(".dish-container");
+    const container = $(this).closest(".dish-container");
+
+    // Remove dish from Dishes array
+    const name = container.find('.name').text();
+    dishes = removeDish(name, dishes);
 
     // update items count on the cart
-    let $ordersLeft = $('.order-counter').text();
-    $ordersLeft = Number($ordersLeft) - 1;
-    $('.order-counter').text($ordersLeft);
+    const number = Number(container.find('output').text());
+    let $curr = Number($('.order-counter').text()) - number;
+    $('.order-counter').text($curr);
+    setDishQuantity(name, quantity - number, dishes);
 
-    dish.remove();
+    // upate total price on the cart
+    const price = number * Number(container.find('.price').text());
+    total -= price;
+    $('.total').text(total);
+
+    // Remove this dish from cart
+    container.remove();
   });
 
   // Add Button
@@ -125,14 +142,17 @@ $(document).ready(function() {
       output.text(++quantity);
       // update quantity data
       const name = container.find('.name').text();
-      console.log(name, quantity);
       setDishQuantity(name, quantity, dishes);
+      //console.log(dishes);
 
       // increase count of items in cart
       let $ordersAdded = $('.order-counter').text();
       let $addOrder = Number($ordersAdded) + 1;
       $('.order-counter').text($addOrder);
 
+      // update total price
+      total += Number(container.find('.price').text());
+      $('.total').text(total);
     }
 
   });
@@ -148,14 +168,17 @@ $(document).ready(function() {
       output.text(--quantity);
       // update quantity data
       const name = container.find('.name').text();
-      console.log(name, quantity);
       setDishQuantity(name, quantity, dishes);
+      //console.log(dishes);
 
       // decrement count of items in cart
       let $ordersAdded = $('.order-counter').text();
       $ordersAdded = Number($ordersAdded) - 1;
       $('.order-counter').text($ordersAdded);
 
+      // update total price
+      total -= Number(container.find('.price').text());
+      $('.total').text(total);
     }
   });
 
@@ -164,5 +187,6 @@ $(document).ready(function() {
     event.preventDefault();
     window.location.href = "/checkout";
   });
-  ///////////////////////////////////////////////////////////////////////////////////////////////
 });
+
+modules.exports = { dishes, total };

@@ -39,13 +39,17 @@ header {
 		margin: 0;
 		font-weight: bold;
 	}
+	p {
+		text-align: center;
+	}
 }
 
 .content {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
+	align-items: end;
 	margin-left: 5px;
-	align-items: flex-end;
 
 	.remove {
 		width: 15px;
@@ -62,6 +66,7 @@ header {
 	}
 
 	article {
+		align-self: flex-start;
 		margin-top: 10px;
 		p {
 			margin-top: 0;
@@ -110,6 +115,7 @@ header {
 }
 
 .checkout {
+	//position: fixed;
 	float: right;
 	font-weight: bolder;
 	margin-top: 10px;
