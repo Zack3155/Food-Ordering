@@ -8,7 +8,8 @@ db.connect();
 
 // Given dish name, get all of its info data with this name
 // @return {Promise<{}>}
-const getDishInfoByName = function (dish_name) {
+const getDishInfoByName = function(dish_name) {
+  // eslint-disable-next-line camelcase
   const values = [dish_name];
   const queryString = (`
 SELECT
@@ -26,7 +27,7 @@ WHERE
 
 // Given a category string, filter all dishes with this category
 // @return {Promise<{}>}
-const getDishesByCategory = function (category) {
+const getDishesByCategory = function(category) {
   const values = [dish_name];
   const queryString = (`
 SELECT
@@ -43,7 +44,7 @@ WHERE
 
 // Given a string, get all possible dishes contain with this string
 // @return {Promise<{}>}
-const searchDishesByName = function (string) {
+const searchDishesByName = function(string) {
   const values = [`%${string}%`];
   const queryString = (`
 SELECT
@@ -61,7 +62,7 @@ WHERE
 
 // Insert a client record to databse given a client object
 // @return {Promise<{}>}
-const addClient = function (client) {
+const addClient = function(client) {
   const values = [client.name, client.phone, client.street, client.city, client.province, client.post_Code, client.name];
   const queryString = (`
   INSERT INTO clients (${Object.keys(client).join()})
@@ -83,7 +84,7 @@ const addClient = function (client) {
 
 // Insert a order record to databse given a order object
 // @return {Promise<{}>}
-const addOrder = function (order) {
+const addOrder = function(order) {
   const values = [order.client_id, order.total, order.estimate, order.time, order.note];
   const queryString = (`
   INSERT INTO orders (${Object.keys(order).join()})
@@ -98,7 +99,7 @@ const addOrder = function (order) {
 
 // Insert a dish-order pair record to databse given a dish_order object
 // @return {Promise<{}>}
-const addDish_orders = function (dish_order) {
+const addDish_orders = function(dish_order) {
   const values = [dish_order.order_id, dish_order.dish_id, dish_order.cost, dish_order.dish_quantity];
   const queryString = (`
   INSERT INTO dish_orders (${Object.keys(dish_order).join()})

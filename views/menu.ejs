@@ -37,18 +37,27 @@
 
 <body>
   <section class="menu"></section>
-  <div>
-    <% for(let dish of dishes) { %>
-      <div>
-        <img src="<%= dish.photo_url %>" />
-        <%= dish.name %>
-          <%= dish.description %>
-            <%= dish.price %>
-      </div>
-      <% } %>
-  </div>
+  <% for (obj of results){%>
+    <article class="item-container">
+      <div class="dish-pic"> <img alt="picture of dish" src=<%=obj.photo_url %> ></div>
+      <section class="component-container">
+        <h3 class="title">
+          <%= obj.name %>
+        </h3>
+        <p>
+          <%= obj.description %>
+        </p>
 
-  <section class="footer-container"></section>
+        <button type="button" class="btn btn-default btn-sm bg-to-red">
+          <span class="glyphicon
+              glyphicon-shopping-cart">
+          </span>
+          <b> Add to Cart </b>
+        </button>
+      </section>
+    </article>
+    <%}%>
+      <section class="footer-container"></section>
 </body>
 
 </html>
