@@ -1,6 +1,4 @@
 const express = require('express');
-const sms = require('../sendSms.js').sendTextMessage;
-sms("here");
 const router = express.Router();
 
 module.exports = (db) => {
@@ -9,4 +7,3 @@ module.exports = (db) => {
   });
   return router;
 };
-

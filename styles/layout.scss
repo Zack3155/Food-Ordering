@@ -210,13 +210,16 @@ body {
 	@media only screen and (max-width: 650px) {
 		flex-direction: column;
 	}
+
+	display: inline-block;
+	text-align: center;
 }
 
 // style content component for menu item
 
 .component-container {
 	font-family: $pp-font;
-	@include displayFlex(flex, space-between, center);
+	@include displayFlex(flex, center, center);
 	flex-direction: column;
 	padding: 2em;
 
