@@ -114,19 +114,19 @@ const footer = () => {
  * Remove dish from Dishes given by its name
  * Return a COPY of modified Dishes
  */
-const removeDish = function (dish_name, dishes) {
+const removeDish = function(dish_name, dishes) {
   return dishes.filter(itm => !itm[dish_name]);
 };
 
 // Add dish to Dishes given by dish's name & dish's quantity
-const addDish = function (dish_name, quantity, dishes) {
+const addDish = function(dish_name, quantity, dishes) {
   let obj = {};
-  obj[dish_name] = quantity
+  obj[dish_name] = quantity;
   dishes.push(obj);
 };
 
 // Modifies dishes given by dish's name & dish's quantity
-const setDishQuantity = function (dish_name, quantity, dishes) {
+const setDishQuantity = function(dish_name, quantity, dishes) {
   for (const itm of dishes) {
     if (itm[dish_name]) {
       itm[dish_name] = quantity;
@@ -140,7 +140,7 @@ const setDishQuantity = function (dish_name, quantity, dishes) {
 
 
 // Count the total number of items in the cart
-const countCartItems = function (dishes) {
+const countCartItems = function(dishes) {
   let result = 0;
   for (const itm of dishes) {
     result += Number(Object.values(itm));
@@ -149,7 +149,7 @@ const countCartItems = function (dishes) {
 };
 
 // Return true if we can find the dish name in dishes array
-const findDish = function (name, dishes) {
+const findDish = function(name, dishes) {
   for (const itm of dishes) {
     if (Object.keys(itm)[0] === name) {
       return true;
@@ -159,7 +159,7 @@ const findDish = function (name, dishes) {
 };
 
 // remove dish from cart by given its name
-const removeDishFromCart = function (dish_name, cart) {
+const removeDishFromCart = function(dish_name, cart) {
   return cart.filter(itm => {
     if (Object.values(itm)[0] !== dish_name) {
       return true;
@@ -173,7 +173,7 @@ const removeDishFromCart = function (dish_name, cart) {
  * Create single cart item by given dish object and its quantity
  * Also push the dish item to dishes
  */
-const createCartItem = function (dish, quantity) {
+const createCartItem = function(dish, quantity) {
   const name = dish.name;
   const photo_url = dish.photo_url;
   const intro = dish.description;
@@ -208,7 +208,7 @@ const createCartItem = function (dish, quantity) {
 };
 
 // Dynamically show cart content according to Dishes array
-const renderCart = function (dishes) {
+const renderCart = function(dishes) {
   const cartContainer = $('.dishes');
   // clear cart and its container
   cart = [];
@@ -217,16 +217,16 @@ const renderCart = function (dishes) {
     const $itm = createCartItem(itm, 1);
     cartContainer.append($itm);
   }
-}
+};
 
 // Reset the entire cart
-const resetCart = function () {
+const resetCart = function() {
   dishes = [];
   cart = [];
   total = 0;
   quantity = 0;
   $('.order-counter').text(0);
-}
+};
 
 
 /**
@@ -239,7 +239,8 @@ let cart = [];
 let total = 0;
 let quantity = 0;
 
-$(document).ready(function () {
+$(document).ready(function() {
+  $('.confirm').hide();
   $('.menu').append(createNavBar);
   $('.search-container').append(searchButton);
   $('.shape-decoration').append(createDecoration);
@@ -247,7 +248,7 @@ $(document).ready(function () {
   $('.footer-container').append(footer);
 
   // Add to Cart button
-  $(".item-container button").on("click", function (event) {
+  $(".item-container button").on("click", function(event) {
     event.preventDefault();
     const container = $(this).closest('.item-container');
     const name = container.find('.title').text().trim();
@@ -265,12 +266,12 @@ $(document).ready(function () {
   });
 
   // when click cart icon
-  $('.cartClick').on("click", function () {
+  $('.cartClick').on("click", function() {
     localStorage.setItem('cartItems', JSON.stringify(cart));
   });
 
   // when menu got clicked
-  $('.menuClick').on("click", function () {
+  $('.menuClick').on("click", function() {
     localStorage.setItem('cartItems', JSON.stringify(cart));
   });
 
@@ -289,7 +290,7 @@ $(document).ready(function () {
   $('.total').text(total);
 
   // Remove Button
-  $(".remove button").on("click", function (event) {
+  $(".remove button").on("click", function(event) {
     event.preventDefault();
     // Remove the current dish from cart page
     const container = $(this).closest(".dish-container");
@@ -313,7 +314,7 @@ $(document).ready(function () {
   });
 
   // Add Button
-  $(".add").on("click", function (event) {
+  $(".add").on("click", function(event) {
     event.preventDefault();
     const container = $(this).closest(".dish-container");
     const output = container.find('output');
@@ -335,7 +336,7 @@ $(document).ready(function () {
   });
 
   // Minus Button
-  $(".minus").on("click", function (event) {
+  $(".minus").on("click", function(event) {
     event.preventDefault();
     const container = $(this).closest(".dish-container");
     const output = container.find('output');
@@ -357,9 +358,18 @@ $(document).ready(function () {
   });
 
   // Checkout Button
-  $(".checkout button").on("click", function () {
+  $(".checkout button").on("click", function() {
     localStorage.setItem('cartItems', JSON.stringify(cart));
     window.location.href = "/checkout";
+  });
+
+  $('.order button').on("click", ()=> {
+    let cart = {};
+    localStorage.setItem('cartItems', JSON.stringify(cart));
+    $('.confirm').show();
+    setTimeout(() => {
+      window.location.href = '/home';
+    }, 3000);
   });
 
 });
